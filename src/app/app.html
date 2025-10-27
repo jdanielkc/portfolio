@@ -149,11 +149,20 @@
         <div class="timeline-item">
           <div class="timeline-card card">
             <div class="card-body">
-              <h3 class="card-title">{{ exp.position }}</h3>
-              <h5 class="company-name">{{ exp.company }}</h5>
-              <p class="period">
-                <i class="bi bi-calendar-event"></i> {{ exp.period }}
-              </p>
+              <div class="experience-header">
+                @if (exp.logo) {
+                  <div class="company-logo" [class.dark-bg]="exp.company === 'Diverjuegos SAS'">
+                    <img [src]="exp.logo" [alt]="exp.company + ' logo'" />
+                  </div>
+                }
+                <div class="experience-title-section">
+                  <h3 class="card-title">{{ exp.position }}</h3>
+                  <h5 class="company-name">{{ exp.company }}</h5>
+                  <p class="period">
+                    <i class="bi bi-calendar-event"></i> {{ exp.period }}
+                  </p>
+                </div>
+              </div>
               <ul class="description-list">
                 @for (desc of exp.description; track desc) {
                   <li>{{ desc }}</li>
@@ -181,14 +190,20 @@
         <div class="col-lg-6 mb-4">
           <div class="card education-card">
             <div class="card-body">
-              <div class="education-icon">
-                <i class="bi bi-mortarboard-fill"></i>
+              <div class="education-header">
+                @if (edu.logo) {
+                  <div class="university-logo">
+                    <img [src]="edu.logo" [alt]="edu.institution + ' logo'" />
+                  </div>
+                }
+                <div class="education-title-section">
+                  <h3 class="card-title">{{ edu.degree }}</h3>
+                  <h5 class="institution-name">{{ edu.institution }}</h5>
+                  <p class="period">
+                    <i class="bi bi-calendar-event"></i> {{ edu.period }}
+                  </p>
+                </div>
               </div>
-              <h3 class="card-title">{{ edu.degree }}</h3>
-              <h5 class="institution-name">{{ edu.institution }}</h5>
-              <p class="period">
-                <i class="bi bi-calendar-event"></i> {{ edu.period }}
-              </p>
               @if (edu.description) {
                 <p class="description">{{ edu.description }}</p>
               }

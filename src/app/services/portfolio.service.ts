@@ -50,7 +50,8 @@ export class PortfolioService {
             'Integración de sistemas mediante múltiples APIs REST y actualización de aplicaciones móviles con Angular, Spring Framework y Flutter',
             'Ejecución de pruebas de carga y pruebas unitarias con JMeter, JUnit, Mockito y Spring Test'
           ],
-          technologies: ['Spring Framework', 'Java Spring Boot', 'Angular', 'JMeter', 'Azure', 'Microservicios', 'PL/SQL', 'SQL', 'Git', 'Docker', 'HTML', 'CSS', 'JavaScript']
+          technologies: ['Spring Framework', 'Java Spring Boot', 'Angular', 'JMeter', 'Azure', 'Microservicios', 'PL/SQL', 'SQL', 'Git', 'Docker', 'HTML', 'CSS', 'JavaScript'],
+          logo: 'assets/images/companies/supergiros_logo.svg'
         },
         {
           company: 'Accenture Colombia',
@@ -62,7 +63,8 @@ export class PortfolioService {
             'Desarrollo de bases de datos optimizadas para el entrenamiento de modelos de Machine Learning',
             'Diseño de dashboards en PowerBI para monitoreo de resultados'
           ],
-          technologies: ['Python', 'NumPy', 'Apache Spark', 'Pandas', 'PowerBI', 'Machine Learning', 'Keras', 'TensorFlow']
+          technologies: ['Python', 'NumPy', 'Apache Spark', 'Pandas', 'PowerBI', 'Machine Learning', 'Keras', 'TensorFlow'],
+          logo: 'assets/images/companies/accenture_colombia_logo.jpeg'
         },
         {
           company: 'Diverjuegos SAS',
@@ -75,7 +77,8 @@ export class PortfolioService {
             'Creación de aplicación web SPA con Bootstrap, HTML, CSS y Angular',
             'Mantenimiento y soporte técnico en las distintas sedes de la empresa'
           ],
-          technologies: ['Spring Framework', 'Java', 'Spring Boot', 'Angular', 'Docker', 'HTML', 'CSS', 'JavaScript', 'Seguridad Informática']
+          technologies: ['Spring Framework', 'Java', 'Spring Boot', 'Angular', 'Docker', 'HTML', 'CSS', 'JavaScript', 'Seguridad Informática'],
+          logo: 'assets/images/companies/Diverjuegos_logo.png'
         }
       ],
       education: [
@@ -83,19 +86,22 @@ export class PortfolioService {
           institution: 'Universidad de los Andes',
           degree: 'Maestría en Ingeniería de Software',
           period: '2024 - Presente',
-          description: 'Actualmente curso el segundo semestre de la maestría, abarcando temas como ingeniería y arquitectura de software web, pruebas automatizadas, aplicaciones web, aplicaciones en la nube, entre otras.'
+          description: 'Actualmente curso el segundo semestre de la maestría, abarcando temas como ingeniería y arquitectura de software web, pruebas automatizadas, aplicaciones web, aplicaciones en la nube, entre otras.',
+          logo: 'assets/images/universities/universidad-de-los-andes-logo.png'
         },
         {
           institution: 'Universidad del Valle',
           degree: 'Ingeniería Electrónica',
           period: '2015 - 2023',
-          description: 'Trabajo de grado: Clasificación de patologías cardiovasculares con máquinas de aprendizaje profundo a partir de señales ECG.'
+          description: 'Trabajo de grado: Clasificación de patologías cardiovasculares con máquinas de aprendizaje profundo a partir de señales ECG.',
+          logo: 'assets/images/universities/universidad-del-valle-logo.png'
         },
         {
           institution: 'Universidad Tecnológica de Pereira',
           degree: 'Diplomado en Programación Web',
           period: '2021',
-          description: 'El diplomado abarcó 4 áreas: Python, JAVA, desarrollo de software y aplicaciones web a lo largo de 800 horas.'
+          description: 'El diplomado abarcó 4 áreas: Python, JAVA, desarrollo de software y aplicaciones web a lo largo de 800 horas.',
+          logo: 'assets/images/universities/universidad_tecnologica_pereira_logo.png'
         }
       ],
       projects: [
@@ -257,7 +263,8 @@ export class PortfolioService {
             'Integrated systems through multiple REST APIs and contributed to updating the mobile application',
             'Conducted load testing and unit testing with JMeter, JUnit, Mockito, and Spring Test'
           ],
-          technologies: ['Java', 'Spring Framework', 'Angular', 'JMeter', 'Azure', 'Microservices', 'PL/SQL', 'Git', 'GitLab', 'GitHub']
+          technologies: ['Java', 'Spring Framework', 'Angular', 'JMeter', 'Azure', 'Microservices', 'PL/SQL', 'Git', 'GitLab', 'GitHub'],
+          logo: 'assets/images/companies/supergiros_logo.svg'
         },
         {
           company: 'Accenture Colombia',
@@ -269,7 +276,8 @@ export class PortfolioService {
             'Developed optimized databases for training Machine Learning models',
             'Designed PowerBI dashboards for monitoring results'
           ],
-          technologies: ['Python', 'NumPy', 'Apache Spark', 'Pandas', 'PowerBI', 'Machine Learning', 'Keras', 'TensorFlow']
+          technologies: ['Python', 'NumPy', 'Apache Spark', 'Pandas', 'PowerBI', 'Machine Learning', 'Keras', 'TensorFlow'],
+          logo: 'assets/images/companies/accenture_colombia_logo.jpeg'
         },
         {
           company: 'Diverjuegos SAS',
@@ -282,7 +290,8 @@ export class PortfolioService {
             'Created a Single Page Application (SPA) using Bootstrap, HTML, CSS, and Angular',
             'Provided maintenance and technical support across company locations'
           ],
-          technologies: ['Spring Framework', 'Java', 'Spring Boot', 'Angular', 'HTML', 'CSS', 'JavaScript']
+          technologies: ['Spring Framework', 'Java', 'Spring Boot', 'Angular', 'HTML', 'CSS', 'JavaScript'],
+          logo: 'assets/images/companies/Diverjuegos_logo.png'
         }
       ],
       education: [
@@ -290,19 +299,22 @@ export class PortfolioService {
           institution: 'University of the Andes',
           degree: 'MSc in Software Engineering',
           period: '2024 - Present',
-          description: 'Currently in the second semester, covering topics such as software and web architecture, automated testing, web applications, cloud applications'
+          description: 'Currently in the second semester, covering topics such as software and web architecture, automated testing, web applications, cloud applications',
+          logo: 'assets/images/universities/universidad-de-los-andes-logo.png'
         },
         {
           institution: 'University of the Valley',
           degree: 'Electronic Engineering',
           period: '2015 - 2023',
-          description: 'Thesis: Classification of cardiovascular pathologies using deep learning techniques based on ECG signals'
+          description: 'Thesis: Classification of cardiovascular pathologies using deep learning techniques based on ECG signals',
+          logo: 'assets/images/universities/universidad-del-valle-logo.png'
         },
         {
           institution: 'Technological University of Pereira',
           degree: 'Diploma in Web Programming',
           period: '2021',
-          description: 'The diploma covered 4 areas: Python, JAVA, software development, and web applications over 800 hours'
+          description: 'The diploma covered 4 areas: Python, JAVA, software development, and web applications over 800 hours',
+          logo: 'assets/images/universities/universidad_tecnologica_pereira_logo.png'
         }
       ],
       projects: [
