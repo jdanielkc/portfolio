@@ -6,9 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "ng build --configuration production --base-href /portfolio/",
+    "build:custom-domain": "ng build --configuration production-custom-domain",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng build --configuration production --base-href /portfolio/ && npx angular-cli-ghpages --dir=dist/portfolio/browser"
+    "deploy": "ng build --configuration production --base-href /portfolio/ && npx angular-cli-ghpages --dir=dist/portfolio/browser",
+    "deploy:custom-domain": "ng build --configuration production-custom-domain && npx angular-cli-ghpages --dir=dist/portfolio/browser"
   },
   "prettier": {
     "printWidth": 100,

@@ -51,6 +51,22 @@
               "outputHashing": "all",
               "baseHref": "/portfolio/"
             },
+            "production-custom-domain": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "700kB",
+                  "maximumError": "1.5MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "10kB",
+                  "maximumError": "15kB"
+                }
+              ],
+              "outputHashing": "all",
+              "baseHref": "/"
+            },
             "development": {
               "optimization": false,
               "extractLicenses": false,
