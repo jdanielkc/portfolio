@@ -276,6 +276,7 @@
           padding: 0.5rem;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
           position: relative;
+          overflow: hidden;
 
           &.dark-bg {
             background: #1a1a1a;
@@ -391,6 +392,7 @@
       padding: 0.5rem;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       position: relative;
+      overflow: hidden;
 
       img {
         object-fit: contain;

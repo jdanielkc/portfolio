@@ -145,7 +145,7 @@
   <div class="container">
     <h2 class="section-title text-white">{{ translations().experience.title }}</h2>
     <div class="timeline">
-      @for (exp of portfolioData().experiences; track exp.company) {
+      @for (exp of portfolioData().experiences; track $index) {
         <div class="timeline-item">
           <div class="timeline-card card">
             <div class="card-body">
@@ -164,12 +164,12 @@
                 </div>
               </div>
               <ul class="description-list">
-                @for (desc of exp.description; track desc) {
+                @for (desc of exp.description; track $index) {
                   <li>{{ desc }}</li>
                 }
               </ul>
               <div class="technologies">
-                @for (tech of exp.technologies; track tech) {
+                @for (tech of exp.technologies; track $index) {
                   <span class="badge">{{ tech }}</span>
                 }
               </div>
@@ -186,7 +186,7 @@
   <div class="container">
     <h2 class="section-title">{{ translations().education.title }}</h2>
     <div class="row">
-      @for (edu of portfolioData().education; track edu.institution) {
+      @for (edu of portfolioData().education; track $index) {
         <div class="col-lg-6 mb-4">
           <div class="card education-card">
             <div class="card-body">
@@ -224,7 +224,7 @@
         <div class="card skills-card">
           <div class="card-body">
             <h3 class="card-title">{{ translations().skills.technical }}</h3>
-            @for (skill of portfolioData().skills.technical; track skill.name) {
+            @for (skill of portfolioData().skills.technical; track $index) {
               <div class="skill-item">
                 <div class="skill-header">
                   <span class="skill-name">{{ skill.name }}</span>
@@ -243,7 +243,7 @@
           <div class="card-body">
             <h3 class="card-title">{{ translations().skills.soft }}</h3>
             <div class="soft-skills">
-              @for (skill of portfolioData().skills.soft; track skill) {
+              @for (skill of portfolioData().skills.soft; track $index) {
                 <div class="soft-skill-item">
                   <i class="bi bi-check-circle-fill"></i>
                   <span>{{ skill }}</span>
@@ -262,7 +262,7 @@
   <div class="container">
     <h2 class="section-title">{{ translations().projects.title }}</h2>
     <div class="row">
-      @for (project of portfolioData().projects; track project.title) {
+      @for (project of portfolioData().projects; track $index) {
         <div class="col-lg-4 mb-4">
           <div class="card project-card">
             <div class="project-image">
@@ -272,7 +272,7 @@
               <h3 class="card-title">{{ project.title }}</h3>
               <p class="card-text">{{ project.description }}</p>
               <div class="technologies mb-3">
-                @for (tech of project.technologies; track tech) {
+                @for (tech of project.technologies; track $index) {
                   <span class="badge">{{ tech }}</span>
                 }
               </div>
