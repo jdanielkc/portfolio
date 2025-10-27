@@ -1,0 +1,235 @@
+% FortySecondsCV LaTeX template
+% Copyright © 2019-2020 René Wirnata
+% Licensed under the 3-Clause BSD License.
+%
+% Fuente: https://github.com/PandaScience/FortySecondsCV
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+    a4paper,
+    % showframes,
+    % vline=2.2em,
+    % maincolor=cvblack,
+    % sidecolor=gray!50,
+    % sectioncolor=cvblack,
+    subsectioncolor=cvblue,
+    % itemtextcolor=black!80,
+    % sidebarwidth=0.4\paperwidth,
+    % topbottommargin=0.03\paperheight,
+    % leftrightmargin=20pt,
+    % profilepicsize=4.5cm,
+    profilepicborderwidth=4.5pt,
+    % profilepicstyle=profilecircle,
+    % profilepiczoom=1.0,
+    % profilepicxshift=0mm,
+    % profilepicyshift=0mm,
+    % profilepicrounding=1.0cm,
+]{fortysecondscv}
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage[spanish]{babel}
+
+% Desactivar la separación de palabras con guión
+\usepackage[none]{hyphenat} %% CORRECCIÓN: Se desactiva la división automática de palabras.
+
+% take care of proper font encoding
+\ifxetexorluatex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures=TeX}
+%   \newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+%   \usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+    bubble center node font = \footnotesize,
+    bubble node font = \footnotesize,
+    bubble center node size = 0.4\sidebartextwidth,
+    bubble node size = 0.25\sidebartextwidth,
+    distance center/other bubbles = 1.5em,
+    bubble center node color = maincolor!70,
+    set color list = {maincolor!10, maincolor!40, maincolor!20, maincolor!60, maincolor!35},
+    bubble fill opacity = 0.8,
+}
+
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+%% mandatory information
+\cvname{\LARGE\textbf{Jose Daniel Garcia Arias}}
+\cvjobtitle{Ingeniero Electrónico\\[0.2em]MSc en Ingeniería de Software} %% CORRECCIÓN: Unificación y correcta capitalización.
+\cvprofilepic{pics/profile.jpg}
+\cvbirthday{Julio 11, 1996}
+\cvphone{+57 317 863 1915}
+% \cvmail{jd.garciaa1@uniandes.edu.co}
+\cvmail{jose.garcia960711@gmail.com}
+\cvcustomdata{\faFlag}{Colombiano}
+\cvcustomdata{\faIdCard}{Tarjeta Profesional}
+\cvcustomdata{\faCheck}{Disponibilidad para viajes y traslado}
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+\addtofrontsidebar{
+    \graphicspath{{pics/flags/}}
+    \profilesection{Redes Profesionales}
+        \begin{icontable}{2.5em}{1em}
+            \social{\faLinkedin}{https://www.linkedin.com/in/jgarciaarias/}{Linkedin (clic)}
+            \social{\faGithub}{https://github.com/jdanielkc}{Github Link}
+        \end{icontable}
+    \profilesection{Lenguajes}
+        \pointskill{\flag{CO.png}}{Español}{5}
+        \pointskill{\flag{GB.png}}{Inglés}{3}
+    \profilesection{Habilidades Duras}
+            \pointskill{\faJava}{Java}{5}[5]
+            \pointskill{\faGitSquare}{Git y GitHub}{5}[5] %% CORRECCIÓN: Capitalización unificada.
+            \pointskill{\faDatabase}{SQL}{5}[5]
+            \pointskill{\faJava}{Spring Framework}{4}[5]
+            \pointskill{\faJava}{JMeter}{4}[5] %% CORRECCIÓN: "JMeter" con M mayúscula.
+            \pointskill{\faAngular}{Angular}{4}[5]
+            \pointskill{\faDatabase}{PL/SQL}{4}[5]
+            \pointskill{\faHtml5}{HTML}{4}[5]
+            \pointskill{\faCss3*}{CSS}{4}[5]
+            \pointskill{\faPython}{Python}{4}[5]
+            \pointskill{\faDocker}{Docker}{4}[5]
+            \pointskill{\faMaxcdn}{Maven}{4}[5]
+            \pointskill{\faAws}{AWS}{3}[5]
+            \pointskill{\faJsSquare}{JavaScript}{3}[5]
+}
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 2nd PAGE
+%-------------------------------------------------------------------------------
+\addtobacksidebar{
+    \profilesection{Sobre mí}
+    \aboutme{
+    \textcolor{black!90}{Soy un ingeniero electrónico con experiencia en desarrollo de software. He participado en la integración de importantes empresas del país, como Grupo Éxito y Supergiros. Mis fortalezas técnicas incluyen Java, Python, Spring, PL/SQL y diversas tecnologías clave para el desarrollo web y móvil.\\
+    Actualmente curso una Maestría en Ingeniería de Software, profundizando mis conocimientos en arquitectura de software, desarrollo web, pruebas automatizadas y aplicaciones móviles. Mi enfoque es traducir los requisitos del negocio en soluciones técnicas efectivas, destacándome en el abordaje de desafíos complejos con una visión integral y especializada en el ciclo de vida del desarrollo de software.}}
+    
+    \profilesection{Habilidades Blandas}
+        \skill{\faUsers}{Trabajo en equipo}{}
+        \skill{\faLightbulb[regular]}{Curiosidad}{}
+        \skill{\faHandPaper[regular]}{Iniciativa}{}
+        \skill{\faCogs}{Adaptabilidad}{}
+        \skill{\faClock}{Gestión del tiempo}{}
+        \skill{\faComments}{Comunicación}{}
+        \skill{\faPuzzlePiece}{Resolución de Problemas}{}
+        \skill{\faUserTie}{Liderazgo}{}
+
+        
+    \profilesection{Software}
+    \begin{sidebarminipage}
+            \chartlabel{Azure}
+            \chartlabel{Microsoft Office}
+            \chartlabel{Power BI}
+            \chartlabel{Postman}
+            \chartlabel{Postgres DB}
+            \chartlabel{Libre Office}
+            \chartlabel{LaTeX}
+            \chartlabel{Keras}
+            \chartlabel{Oracle DB}
+            \chartlabel{JMeter} %% CORRECCIÓN: Consistencia con "JMeter".
+            \chartlabel{SO Linux}
+            \chartlabel{SO Windows}
+            \chartlabel{Pandas}
+    \end{sidebarminipage}
+}
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makefrontsidebar
+
+\cvsection{Experiencia Laboral}
+\begin{cvtable}[3]
+    \cvitem{10/2022 -- Actualmente\centering}{Ingeniero de Desarrollo}{Red Empresarial de Servicios S.A}{
+        Desempeño el rol de desarrollador FullStack en el desarrollo y mantenimiento de aplicaciones web y móviles, participando en el diseño, desarrollo y despliegue de integraciones a gran escala para importantes empresas como Supergiros y Grupo Éxito. Utilizo tecnologías como Java, Spring Framework, PL/SQL y Angular. Bajo la metodología Scrum, he liderado proyectos de diversas escalas, implementando principios SOLID y patrones de arquitectura (MVC, SAGA, etc.).\\[0.2em]
+        • Desarrollo y mantenimiento de proyectos en producción utilizando versiones LTS de Java (8, 11, 17) y protocolos de seguridad TLS/SSL y Mutual TLS para comunicaciones seguras.\\[0.2em]
+        • Optimización de flujos de trabajo mediante la mejora en el diseño de bases de datos en Postgres y Oracle, asegurando integridad y eficiencia.\\[0.2em]
+        • Integración de sistemas mediante múltiples API REST y participación en la actualización de la aplicación móvil, migrando a tecnologías de vanguardia (Angular, Spring Framework y Flutter).\\[0.2em]
+        • Ejecución de pruebas de carga y pruebas unitarias con JMeter, JUnit, Mockito y Spring Test.\\[0.2em]
+        \textbf{Skills}: Spring Framework, Java Spring Boot, Angular, JMeter, Docker, Azure, Microservicios, JForms, PL/SQL, SQL, Git, GitLab, GitHub, SVN, HTML, CSS, JavaScript, Git Flow, JUnit, Pytest.
+    }
+    \cvitem{01/2022--07/2022\centering}{Analytic and Big Data Intern}{Accenture Colombia}{
+        Desempeñé el rol de ingeniero de datos junior, colaborando en el desarrollo, implementación y entrega de un modelo de aprendizaje automático para predecir la probabilidad de abandono de compra. Entre mis responsabilidades se destacó la optimización de modelos de inteligencia artificial mediante ajuste de hiperparámetros y la generación de dashboards en PowerBI para visualizar los resultados.\\[0.2em]
+        • Optimización de modelos utilizando técnicas como Support Vector Machine, Random Forest y Deep Networks.\\[0.2em]
+        • Desarrollo de bases de datos optimizadas para el entrenamiento de modelos de Machine Learning.\\[0.2em]
+        • Diseño de dashboards en PowerBI para el monitoreo de resultados.\\[0.2em]
+        \textbf{Skills}: Python, NumPy, Inteligencia Artificial, Apache Spark, Pandas, PowerBI, Machine Learning, Keras, TensorFlow.
+    }
+    \cvitem{01/2019--12/2021\centering}{Tecnólogo de Informática y Soporte}{Diverjuegos SAS}{
+        Responsable del diseño, desarrollo e implementación de requerimientos de software, así como del soporte técnico de la infraestructura tecnológica y la supervisión de los sistemas de seguridad informática.\\[0.2em]
+        • Diseño de la arquitectura de microservicios para un portal administrativo tipo wiki, destinado a documentar las capacitaciones de nuevos empleados.\\[0.2em]
+        • Desarrollo del BackEnd y FrontEnd utilizando Spring Data, Spring Boot, Spring Gateway y Angular.\\[0.2em]
+        • Creación de una aplicación web SPA con Bootstrap, HTML, CSS y Angular.\\[0.2em]
+        • Mantenimiento y soporte técnico en las distintas sedes de la empresa.\\[0.2em]
+        \textbf{Skills}: Spring Framework, Soporte Técnico, Java, Docker, Spring Boot, Angular, Seguridad Informática, Diseño de Sistemas IP, HTML, CSS, JavaScript.
+    }
+\end{cvtable}
+
+\newpage
+
+\cvsection{Estudios}
+\cvsubsection{\textbf{Profesionales}}
+\begin{cvtable}[1.5]
+    \cvitem{2024--Actualmente\centering}{Maestría en Ingeniería de Software}{Universidad de los Andes}{Actualmente curso el segundo semestre de la maestría, abarcando temas como ingeniería y arquitectura de software web, pruebas automatizadas, aplicaciones web, aplicaciones en la nube, entre otras. }
+    \cvitem{2015 -- 2023\centering}{Ingeniería Electrónica}{Universidad del valle}{\textit{Trabajo de grado}: Clasificación de patologías cardiovasculares con máquinas de aprendizaje profundo a partir de señales ECG.}
+    \cvitem{2021 -- 2021\centering}{Diplomado en Programación web}{U. Tecnológica de Pereira}{El diplomado abarcó 4 áreas: Python, JAVA, desarrollo de software y aplicaciones web a lo largo de 800 horas.}
+\end{cvtable}
+
+\cvsubsection{\textbf{Certificaciones}}
+\begin{cvtable}[1.5]
+    \cvitem{2023\centering}{Scrum Foundation Professional Certificate SFPC}{CertiProf}{}
+    \cvitem{2023\centering}{Scrum Fundamentals Certified (SFC)}{Scrumstudy}{}
+\end{cvtable}
+
+\cvsubsection{\textbf{Cursos}}
+\begin{cvtable}[1.5]
+    \cvitem{En Curso\centering}{AWS Academy Cloud Foundations}{Amazon Web Services}{}
+    \cvitem{2024\centering}{Control de versiones con Git y GitHub}{Universidad de los Andes}{}
+    \cvitem{2024\centering}{Introducción a UML}{Universidad de los Andes}{}
+\end{cvtable}
+
+\makebacksidebar
+
+\begin{cvtable}[1.5]
+    \cvitem{2024\centering}{Programación en Python}{Universidad de los Andes}{}
+    \cvitem{2023\centering}{PL/SQL Desde Cero}{Udemy}{}
+    \cvitem{2022\centering}{Curso profesional de Git y Github}{Platzi}{}
+    \cvitem{2022\centering}{Using Python to Access Web Data}{University of Michigan}{}
+    \cvitem{2021\centering}{Python Data Structures}{University of Michigan}{}
+    \cvitem{2021\centering}{Getting Started with Python}{University of Michigan}{}
+\end{cvtable}
+
+\cvsection{Proyectos}
+\begin{cvtable}
+    \cvitem{\centering2022 -- 2023}{Ingeniería Electrónica}{Universidad del valle}{Diseño e implementación de un sistema de clasificación de patologías cardiovasculares haciendo uso de redes neuronales recurrentes y convolucionales a partir de señales electrocardiográficas.}
+\end{cvtable}
+
+\cvsection{Reconocimientos}
+\begin{cvtable}
+    \cvitem{08/2020-12/2020\centering}{Reconocimiento por el mejor promedio académico del semestre.}{Universidad del Valle}{}\\
+    \cvitem{10/2021-04/2022\centering}{Reconocimiento por el mejor promedio académico del semestre.}{Universidad del Valle}{}
+\end{cvtable}
+
+% \cvsection{Referencias Personales}
+% \begin{cvtable}
+%     \cvitem{}{Diego Fernando Teuta}{Cenicaña}{Cargo: Ingeniero Electrónico\\ Contacto: +57 315 7404753}\\
+%     \cvitem{}{Angela Andrade}{Kalettre}{Cargo: Desarrolladora de software\\ Contacto: +57 318 6875106}\\
+% \end{cvtable}
+
+\cvsignature
+\end{document}
