@@ -1,11 +1,11 @@
 import { Component, computed, signal, inject, OnInit, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { TranslationService } from './services/translation.service';
 import { PortfolioService } from './services/portfolio.service';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule],
+  imports: [CommonModule, NgOptimizedImage],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

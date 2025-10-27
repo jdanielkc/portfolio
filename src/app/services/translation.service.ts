@@ -1,6 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 
 export interface Translation {
+  brand: string;
   nav: {
     home: string;
     about: string;
@@ -55,6 +56,7 @@ export class TranslationService {
 
   private readonly translations: Record<'en' | 'es', Translation> = {
     es: {
+      brand: 'Portafolio',
       nav: {
         home: 'Inicio',
         about: 'Sobre Mí',
@@ -101,6 +103,7 @@ export class TranslationService {
       }
     },
     en: {
+      brand: 'Portfolio',
       nav: {
         home: 'Home',
         about: 'About',
