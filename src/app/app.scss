@@ -759,4 +759,59 @@
       }
     }
   }
+}// Mobile responsive fixes for hero section - Add at end of app.scss
+
+// Mobile responsive improvements
+@media (max-width: 991px) {
+    .hero-section .hero-image {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        .hero-content {
+            .hero-description {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        .hero-image .profile-card {
+            width: 250px;
+            height: 250px;
+
+            i {
+                font-size: 160px;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        .hero-content {
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+
+                .btn {
+                    width: 100%;
+                    max-width: 300px;
+                }
+            }
+        }
+
+        .hero-image .profile-card {
+            width: 200px;
+            height: 200px;
+            // Remove float animation on mobile
+            animation: fadeInScale 1s ease-out;
+
+            i {
+                font-size: 120px;
+            }
+        }
+    }
 }
