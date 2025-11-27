@@ -73,6 +73,7 @@
 \cvbirthday{Julio 11, 1996}
 \cvphone{+57 317 863 1915}
 % \cvmail{jd.garciaa1@uniandes.edu.co}
+\cvsite{www.josegarcia.com.co}
 \cvmail{jose.garcia960711@gmail.com}
 \cvcustomdata{\faFlag}{Colombiano}
 \cvcustomdata{\faIdCard}{Tarjeta Profesional}
@@ -114,8 +115,9 @@
 \addtobacksidebar{
     \profilesection{Sobre mí}
     \aboutme{
-    \textcolor{black!90}{Soy un ingeniero electrónico con experiencia en desarrollo de software. He participado en la integración de importantes empresas del país, como Grupo Éxito y Supergiros. Mis fortalezas técnicas incluyen Java, Python, Spring, PL/SQL y diversas tecnologías clave para el desarrollo web y móvil.\\
-    Actualmente curso una Maestría en Ingeniería de Software, profundizando mis conocimientos en arquitectura de software, desarrollo web, pruebas automatizadas y aplicaciones móviles. Mi enfoque es traducir los requisitos del negocio en soluciones técnicas efectivas, destacándome en el abordaje de desafíos complejos con una visión integral y especializada en el ciclo de vida del desarrollo de software.}}
+    \textcolor{black!90}{Soy un ingeniero electrónico con experiencia en desarrollo de software full stack y arquitectura cloud. He participado en la integración de importantes empresas del país, como Grupo Éxito, Supergiros y Carvajal Tecnología y Servicios. Mis fortalezas técnicas incluyen Java, Spring Boot, Angular, AWS, PL/SQL y arquitecturas modernas como Hexagonal y Orientada a Eventos.\\
+    Actualmente curso el último semestre de mi Maestría en Ingeniería de Software en la Universidad de los Andes, profundizando mis conocimientos en arquitectura de software, desarrollo web, pruebas automatizadas y aplicaciones en la nube.\\
+    A lo largo de mi carrera he trabajado traduciendo requisitos del negocio en soluciones técnicas efectivas, aplicando principios SOLID y Clean Code, optimizando recursos cloud y abordando desafíos complejos en distintos dominios del desarrollo de software. Mi formación multidisciplinaria me permite adaptarme a diversos contextos tecnológicos y contribuir en diferentes áreas de la ingeniería de software.}}
     
     \profilesection{Habilidades Blandas}
         \skill{\faUsers}{Trabajo en equipo}{}
@@ -149,19 +151,45 @@
 %-------------------------------------------------------------------------------
 %                         TABLE ENTRIES RIGHT COLUMN
 %-------------------------------------------------------------------------------
+% Definición de un item flexible (se mantiene por si deseas usarlo en el futuro)
+\newcommand{\cvitemfluid}[4]{
+    \par\noindent
+    \begin{minipage}[t]{0.25\textwidth}
+        \raggedright #1
+    \end{minipage}%
+    \begin{minipage}[t]{0.74\textwidth}
+        \textbf{#2} \hfill {\footnotesize #3}
+    \end{minipage}\\[0.2em]
+    \begingroup
+    \leftskip=0.25\textwidth
+    \noindent #4
+    \par
+    \endgroup
+    \vspace{1em}
+}
+
 \begin{document}
 
 \makefrontsidebar
 
 \cvsection{Experiencia Laboral}
+
+% --- BLOQUE 1: PÁGINA 1 (Trabajos Recientes) ---
 \begin{cvtable}[3]
-    \cvitem{10/2022 -- Actualmente\centering}{Ingeniero de Desarrollo}{Red Empresarial de Servicios S.A}{
-        Desempeño el rol de desarrollador FullStack en el desarrollo y mantenimiento de aplicaciones web y móviles, participando en el diseño, desarrollo y despliegue de integraciones a gran escala para importantes empresas como Supergiros y Grupo Éxito. Utilizo tecnologías como Java, Spring Framework, PL/SQL y Angular. Bajo la metodología Scrum, he liderado proyectos de diversas escalas, implementando principios SOLID y patrones de arquitectura (MVC, SAGA, etc.).\\[0.2em]
-        • Desarrollo y mantenimiento de proyectos en producción utilizando versiones LTS de Java (8, 11, 17) y protocolos de seguridad TLS/SSL y Mutual TLS para comunicaciones seguras.\\[0.2em]
-        • Optimización de flujos de trabajo mediante la mejora en el diseño de bases de datos en Postgres y Oracle, asegurando integridad y eficiencia.\\[0.2em]
-        • Integración de sistemas mediante múltiples API REST y participación en la actualización de la aplicación móvil, migrando a tecnologías de vanguardia (Angular, Spring Framework y Flutter).\\[0.2em]
-        • Ejecución de pruebas de carga y pruebas unitarias con JMeter, JUnit, Mockito y Spring Test.\\[0.2em]
-        \textbf{Skills}: Spring Framework, Java Spring Boot, Angular, JMeter, Docker, Azure, Microservicios, JForms, PL/SQL, SQL, Git, GitLab, GitHub, SVN, HTML, CSS, JavaScript, Git Flow, JUnit, Pytest.
+    \cvitem{05/2025 -- Actualmente\centering}{Desarrollador Senior Profesional}{Carvajal Tecnología y Servicios}{
+        Como parte de un equipo de desarrollo de alto nivel, participo en la construcción y evolución de un sistema de gestión documental regional (Colombia, México y Perú). Mi rol se enfoca en la implementación técnica de soluciones full stack, la optimización de recursos en la nube y la aplicación de estándares de calidad de software.\\[0.2em]
+        • Implementación de estrategias de almacenamiento eficiente en AWS (S3 Deep Archive, Glacier), logrando una reducción de costos operativa mediante la gestión inteligente del ciclo de vida de la información.\\[0.2em]
+        • Desarrollo de componentes bajo arquitectura Hexagonal y Orientada a Eventos, desplegados en servicios de contenedores (EKS, ECS) y gestionados mediante servicios de identidad (AWS Cognito, IAM).\\[0.2em]
+        • Aplicación de principios SOLID, Clean Code y patrones de diseño en un entorno de metodologías ágiles, asegurando la mantenibilidad y escalabilidad del código entregado.\\[0.2em]
+        \textbf{Skills}: Java, Spring Boot, Angular, AWS (S3, EKS, ECS, IAM, Cognito), Arquitectura Hexagonal, Event-Driven Architecture, TypeScript, Scrum, HTML, CSS.
+    }
+    \cvitem{10/2022 -- 05/2025\centering}{Ingeniero de Desarrollo}{Red Empresarial de Servicios S.A}{
+        Desarrollador FullStack en integraciones de gran escala (Supergiros, Grupo Éxito) bajo Scrum. Liderazgo técnico aplicando principios SOLID y patrones de arquitectura (MVC, SAGA) en soluciones web y móviles.\\[0.2em]
+        • Desarrollo seguro en Java LTS (8, 11, 17) implementando protocolos TLS/SSL y mTLS.\\[0.2em]
+        • Diseño y optimización de bases de datos (Postgres, Oracle) asegurando integridad y eficiencia.\\[0.2em]
+        • Integración de sistemas vía API REST y migración móvil a stack moderno (Angular, Spring, Flutter).\\[0.2em]
+        • Ejecución de pruebas de carga y unitarias (JMeter, JUnit, Mockito, Spring Test).\\[0.2em]
+        \textbf{Skills}: Java Spring Boot, Angular, PL/SQL, Oracle/Postgres, Docker, Azure, Microservicios, JMeter, Git/SVN/Flow, CI/CD, HTML/CSS/JS.
     }
     \cvitem{01/2022--07/2022\centering}{Analytic and Big Data Intern}{Accenture Colombia}{
         Desempeñé el rol de ingeniero de datos junior, colaborando en el desarrollo, implementación y entrega de un modelo de aprendizaje automático para predecir la probabilidad de abandono de compra. Entre mis responsabilidades se destacó la optimización de modelos de inteligencia artificial mediante ajuste de hiperparámetros y la generación de dashboards en PowerBI para visualizar los resultados.\\[0.2em]
@@ -170,22 +198,29 @@
         • Diseño de dashboards en PowerBI para el monitoreo de resultados.\\[0.2em]
         \textbf{Skills}: Python, NumPy, Inteligencia Artificial, Apache Spark, Pandas, PowerBI, Machine Learning, Keras, TensorFlow.
     }
+\end{cvtable}
+
+% --- CORTE DE PÁGINA Y ACTIVACIÓN DE BARRA LATERAL ---
+\newpage
+\makebacksidebar
+
+% --- BLOQUE 2: PÁGINA 2 (Trabajos Anteriores) ---
+\begin{cvtable}[3]
+
     \cvitem{01/2019--12/2021\centering}{Tecnólogo de Informática y Soporte}{Diverjuegos SAS}{
         Responsable del diseño, desarrollo e implementación de requerimientos de software, así como del soporte técnico de la infraestructura tecnológica y la supervisión de los sistemas de seguridad informática.\\[0.2em]
         • Diseño de la arquitectura de microservicios para un portal administrativo tipo wiki, destinado a documentar las capacitaciones de nuevos empleados.\\[0.2em]
         • Desarrollo del BackEnd y FrontEnd utilizando Spring Data, Spring Boot, Spring Gateway y Angular.\\[0.2em]
-        • Creación de una aplicación web SPA con Bootstrap, HTML, CSS y Angular.\\[0.2em]
+        % • Creación de una aplicación web SPA con Bootstrap, HTML, CSS y Angular.\\[0.2em]
         • Mantenimiento y soporte técnico en las distintas sedes de la empresa.\\[0.2em]
         \textbf{Skills}: Spring Framework, Soporte Técnico, Java, Docker, Spring Boot, Angular, Seguridad Informática, Diseño de Sistemas IP, HTML, CSS, JavaScript.
     }
 \end{cvtable}
 
-\newpage
-
 \cvsection{Estudios}
 \cvsubsection{\textbf{Profesionales}}
 \begin{cvtable}[1.5]
-    \cvitem{2024--Actualmente\centering}{Maestría en Ingeniería de Software}{Universidad de los Andes}{Actualmente curso el segundo semestre de la maestría, abarcando temas como ingeniería y arquitectura de software web, pruebas automatizadas, aplicaciones web, aplicaciones en la nube, entre otras. }
+    \cvitem{2024--Actualmente\centering}{Maestría en Ingeniería de Software}{Universidad de los Andes}{Actualmente curso en último semestre de la maestría, abarcando temas como ingeniería y arquitectura de software web, pruebas automatizadas, aplicaciones web, aplicaciones en la nube, entre otras. }
     \cvitem{2015 -- 2023\centering}{Ingeniería Electrónica}{Universidad del valle}{\textit{Trabajo de grado}: Clasificación de patologías cardiovasculares con máquinas de aprendizaje profundo a partir de señales ECG.}
     \cvitem{2021 -- 2021\centering}{Diplomado en Programación web}{U. Tecnológica de Pereira}{El diplomado abarcó 4 áreas: Python, JAVA, desarrollo de software y aplicaciones web a lo largo de 800 horas.}
 \end{cvtable}
@@ -198,20 +233,17 @@
 
 \cvsubsection{\textbf{Cursos}}
 \begin{cvtable}[1.5]
-    \cvitem{En Curso\centering}{AWS Academy Cloud Foundations}{Amazon Web Services}{}
     \cvitem{2024\centering}{Control de versiones con Git y GitHub}{Universidad de los Andes}{}
     \cvitem{2024\centering}{Introducción a UML}{Universidad de los Andes}{}
 \end{cvtable}
-
-\makebacksidebar
-
 \begin{cvtable}[1.5]
     \cvitem{2024\centering}{Programación en Python}{Universidad de los Andes}{}
     \cvitem{2023\centering}{PL/SQL Desde Cero}{Udemy}{}
-    \cvitem{2022\centering}{Curso profesional de Git y Github}{Platzi}{}
-    \cvitem{2022\centering}{Using Python to Access Web Data}{University of Michigan}{}
-    \cvitem{2021\centering}{Python Data Structures}{University of Michigan}{}
-    \cvitem{2021\centering}{Getting Started with Python}{University of Michigan}{}
+    % \cvitem{2022\centering}{Curso profesional de Git y Github}{Platzi}{}
+    \cvitem{2022\centering}{Python for everybody (specialization)}{University of Michigan}{}
+    % \cvitem{2022\centering}{Using Python to Access Web Data}{University of Michigan}{}
+    % \cvitem{2021\centering}{Python Data Structures}{University of Michigan}{}
+    % \cvitem{2021\centering}{Getting Started with Python}{University of Michigan}{}
 \end{cvtable}
 
 \cvsection{Proyectos}
@@ -231,5 +263,5 @@
 %     \cvitem{}{Angela Andrade}{Kalettre}{Cargo: Desarrolladora de software\\ Contacto: +57 318 6875106}\\
 % \end{cvtable}
 
-\cvsignature
+% \cvsignature
 \end{document}
