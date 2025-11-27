@@ -70,13 +70,13 @@ export class TranslationService {
         greeting: 'Hola, soy',
         name: 'Jose Daniel Garcia Arias',
         title: 'Ingeniero Electrónico | MSc en Ingeniería de Software',
-        description: 'Ingeniero electrónico con experiencia en desarrollo de software. He participado en la integración de grandes empresas del país como Grupo Éxito y Supergiros. Mis fortalezas técnicas incluyen Java, Python, Spring, PL/SQL, y diversas tecnologías clave para el desarrollo web y móvil.',
+        description: 'Ingeniero electrónico con experiencia en desarrollo de software full stack y arquitectura cloud. He participado en la integración de importantes empresas como Grupo Éxito, Supergiros y Carvajal Tecnología y Servicios. Mis fortalezas técnicas incluyen Java, Spring Boot, Angular, AWS, y arquitecturas modernas como Hexagonal y Orientada a Eventos.',
         downloadCV: 'Descargar CV',
         contactMe: 'Contáctame'
       },
       about: {
         title: 'Sobre Mí',
-        description: 'Soy un ingeniero electrónico con experiencia en desarrollo de software. He participado en la integración de grandes empresas del país, tales como Grupo Éxito y Supergiros. Mis fortalezas técnicas incluyen Java, Python, Spring, PL/SQL, y diversas tecnologías clave para el desarrollo web y móvil. Actualmente estoy cursando una Maestría en Ingeniería de Software, profundizando mis conocimientos en arquitectura de software, desarrollo web, testing automatizado y aplicaciones móviles. Mi enfoque consiste en traducir requisitos de negocio en soluciones técnicas efectivas, destacándome en el abordaje de desafíos complejos con una visión integral y especializada del ciclo de vida del desarrollo de software.'
+        description: '<p>Soy un ingeniero electrónico con experiencia en desarrollo de software full stack y arquitectura cloud. He participado en la integración de importantes empresas del país, como Grupo Éxito, Supergiros y Carvajal Tecnología y Servicios. Mis fortalezas técnicas incluyen Java, Spring Boot, Angular, AWS, PL/SQL y arquitecturas modernas como Hexagonal y Orientada a Eventos.</p><p>Actualmente curso el último semestre de mi Maestría en Ingeniería de Software en la Universidad de los Andes, profundizando mis conocimientos en arquitectura de software, desarrollo web, pruebas automatizadas y aplicaciones en la nube.</p><p>A lo largo de mi carrera he trabajado traduciendo requisitos del negocio en soluciones técnicas efectivas, aplicando principios SOLID y Clean Code, optimizando recursos cloud y abordando desafíos complejos en distintos dominios del desarrollo de software.</p>'
       },
       experience: {
         title: 'Experiencia Profesional',
@@ -117,13 +117,13 @@ export class TranslationService {
         greeting: 'Hello, I am',
         name: 'Jose Daniel Garcia Arias',
         title: 'Electronic Engineer | MSc in Software Engineering',
-        description: 'Electronic engineer with experience in software development. I have participated in the integration of major companies in the country such as Grupo Éxito and Supergiros. My technical strengths include Java, Python, Spring, PL/SQL, and various key technologies for web and mobile development.',
+        description: 'Electronic engineer with experience in full-stack software development and cloud architecture. I have participated in the integration of major companies such as Grupo Éxito, Supergiros, and Carvajal Tecnología y Servicios. My technical strengths include Java, Spring Boot, Angular, AWS, and modern architectures such as Hexagonal and Event-Driven.',
         downloadCV: 'Download CV',
         contactMe: 'Contact Me'
       },
       about: {
         title: 'About Me',
-        description: 'I am an electronic engineer with experience in software development. I have participated in the integration of major companies in the country, such as Grupo Éxito and Supergiros. My technical strengths include Java, Python, Spring, PL/SQL, and various key technologies for web and mobile development. I am currently pursuing an MSc in Software Engineering, deepening my knowledge in software architecture, web development, automated testing, and mobile applications. My approach is to translate business requirements into effective technical solutions, excelling in tackling complex challenges with a comprehensive and specialized vision of the software development lifecycle.'
+        description: '<p>I am an electronic engineer with experience in full-stack software development and cloud architecture. I have participated in the integration of major companies in the country, such as Grupo Éxito, Supergiros, and Carvajal Tecnología y Servicios. My technical strengths include Java, Spring Boot, Angular, AWS, PL/SQL, and modern architectures such as Hexagonal and Event-Driven.</p><p>I am currently in the final semester of my MSc in Software Engineering at Universidad de los Andes, deepening my knowledge in software architecture, web development, automated testing, and cloud applications.</p><p>Throughout my career, I have worked translating business requirements into effective technical solutions, applying SOLID and Clean Code principles, optimizing cloud resources, and addressing complex challenges across different software development domains.</p>'
       },
       experience: {
         title: 'Professional Experience',

@@ -40,17 +40,30 @@ export class PortfolioService {
     es: {
       experiences: [
         {
+          company: 'Carvajal Tecnología y Servicios',
+          position: 'Desarrollador Senior Profesional',
+          period: '05/2025 - Presente',
+          description: [
+            'Desarrollo de soluciones full stack en un sistema de gestión documental regional (Colombia, México y Perú), enfocándome en la implementación técnica y optimización de recursos en la nube',
+            'Implementación de estrategias de almacenamiento eficiente en AWS (S3 Deep Archive, Glacier), logrando reducción de costos operativos mediante gestión inteligente del ciclo de vida de la información',
+            'Desarrollo de componentes bajo arquitectura Hexagonal y Orientada a Eventos, desplegados en servicios de contenedores (EKS, ECS) y gestionados con AWS Cognito e IAM',
+            'Aplicación de principios SOLID, Clean Code y patrones de diseño en un entorno ágil, asegurando la mantenibilidad y escalabilidad del código'
+          ],
+          technologies: ['Java', 'Spring Boot', 'Angular', 'AWS', 'S3', 'EKS', 'ECS', 'IAM', 'Cognito', 'TypeScript', 'Hexagonal Architecture', 'Event-Driven', 'Scrum'],
+          logo: 'assets/images/companies/cts_logo.jpg'
+        },
+        {
           company: 'Red Empresarial de Servicios S.A',
           position: 'Ingeniero de Desarrollo',
-          period: '10/2022 - Presente',
+          period: '10/2022 - 05/2025',
           description: [
-            'Desarrollo FullStack de aplicaciones web y móviles, participando en el diseño, desarrollo y despliegue de integraciones a gran escala para empresas como Supergiros y Grupo Éxito',
-            'Desarrollo y mantenimiento de proyectos en producción utilizando versiones LTS de Java (8, 11, 17) e implementación de protocolos de seguridad TLS/SSL y Mutual TLS',
-            'Optimización de flujos de trabajo mejorando el diseño de bases de datos en Postgres y Oracle, asegurando la integridad y eficiencia de los datos',
-            'Integración de sistemas mediante múltiples APIs REST y actualización de aplicaciones móviles con Angular, Spring Framework y Flutter',
-            'Ejecución de pruebas de carga y pruebas unitarias con JMeter, JUnit, Mockito y Spring Test'
+            'Desarrollo FullStack en integraciones de gran escala para Supergiros y Grupo Éxito, aplicando principios SOLID y patrones de arquitectura (MVC, SAGA)',
+            'Desarrollo seguro en Java LTS (8, 11, 17) con implementación de protocolos TLS/SSL y Mutual TLS',
+            'Diseño y optimización de bases de datos en Postgres y Oracle, asegurando integridad y eficiencia',
+            'Integración de sistemas vía APIs REST y migración de aplicaciones móviles a stack moderno (Angular, Spring, Flutter)',
+            'Ejecución de pruebas de carga y unitarias con JMeter, JUnit, Mockito y Spring Test'
           ],
-          technologies: ['Spring Framework', 'Java Spring Boot', 'Angular', 'JMeter', 'Azure', 'Microservicios', 'PL/SQL', 'SQL', 'Git', 'Docker', 'HTML', 'CSS', 'JavaScript'],
+          technologies: ['Java Spring Boot', 'Angular', 'PL/SQL', 'Oracle', 'Postgres', 'Docker', 'Azure', 'Microservicios', 'JMeter', 'Git', 'CI/CD'],
           logo: 'assets/images/companies/supergiros_logo.svg'
         },
         {
@@ -74,10 +87,9 @@ export class PortfolioService {
             'Diseño, desarrollo e implementación de requerimientos de software y soporte técnico de la infraestructura tecnológica',
             'Diseño de arquitectura de microservicios para portal administrativo tipo wiki para capacitación de nuevos empleados',
             'Desarrollo de BackEnd y FrontEnd utilizando Spring Data, Spring Boot, Spring Gateway y Angular',
-            'Creación de aplicación web SPA con Bootstrap, HTML, CSS y Angular',
             'Mantenimiento y soporte técnico en las distintas sedes de la empresa'
           ],
-          technologies: ['Spring Framework', 'Java', 'Spring Boot', 'Angular', 'Docker', 'HTML', 'CSS', 'JavaScript', 'Seguridad Informática'],
+          technologies: ['Spring Framework', 'Java', 'Spring Boot', 'Angular', 'Docker', 'Information Security', 'HTML', 'CSS', 'JavaScript'],
           logo: 'assets/images/companies/Diverjuegos_logo.png'
         }
       ],
@@ -86,7 +98,7 @@ export class PortfolioService {
           institution: 'Universidad de los Andes',
           degree: 'Maestría en Ingeniería de Software',
           period: '2024 - Presente',
-          description: 'Actualmente curso el segundo semestre de la maestría, abarcando temas como ingeniería y arquitectura de software web, pruebas automatizadas, aplicaciones web, aplicaciones en la nube, entre otras.',
+          description: 'Actualmente curso el último semestre de la maestría, abarcando temas como ingeniería y arquitectura de software web, pruebas automatizadas, aplicaciones web, aplicaciones en la nube, entre otras.',
           logo: 'assets/images/universities/universidad-de-los-andes-logo.png'
         },
         {
@@ -133,18 +145,19 @@ export class PortfolioService {
       skills: {
         technical: [
           { name: 'Java', level: 100 },
+          { name: 'Spring Boot', level: 100 },
           { name: 'Git y GitHub', level: 100 },
           { name: 'SQL', level: 100 },
-          { name: 'Spring Framework', level: 80 },
-          { name: 'JMeter', level: 80 },
           { name: 'Angular', level: 80 },
+          { name: 'AWS', level: 80 },
           { name: 'PL/SQL', level: 80 },
+          { name: 'Docker', level: 80 },
+          { name: 'TypeScript', level: 80 },
           { name: 'HTML', level: 80 },
           { name: 'CSS', level: 80 },
           { name: 'Python', level: 80 },
-          { name: 'Docker', level: 80 },
-          { name: 'Maven', level: 80 },
-          { name: 'AWS', level: 60 },
+          { name: 'JMeter', level: 80 },
+          { name: 'Clean Code', level: 60 },
           { name: 'JavaScript', level: 60 }
         ],
         soft: [
@@ -252,18 +265,30 @@ export class PortfolioService {
     en: {
       experiences: [
         {
+          company: 'Carvajal Tecnología y Servicios',
+          position: 'Senior Professional Developer',
+          period: '05/2025 - Present',
+          description: [
+            'Development of full-stack solutions in a regional document management system (Colombia, Mexico, and Peru), focusing on technical implementation and cloud resource optimization',
+            'Implementation of efficient storage strategies in AWS (S3 Deep Archive, Glacier), achieving operational cost reduction through intelligent information lifecycle management',
+            'Development of components under Hexagonal and Event-Driven Architecture, deployed in container services (EKS, ECS) and managed via identity services (AWS Cognito, IAM)',
+            'Application of SOLID principles, Clean Code, and design patterns in an agile environment, ensuring code maintainability and scalability'
+          ],
+          technologies: ['Java', 'Spring Boot', 'Angular', 'AWS', 'S3', 'EKS', 'ECS', 'IAM', 'Cognito', 'TypeScript', 'Hexagonal Architecture', 'Event-Driven', 'Scrum'],
+          logo: 'assets/images/companies/cts_logo.jpg'
+        },
+        {
           company: 'Red Empresarial de Servicios S.A',
           position: 'Development Engineer - FullStack Developer',
-          period: '10/2022 - Present',
+          period: '10/2022 - 05/2025',
           description: [
-            'Serve as a FullStack Developer in the design, development, and maintenance of web and mobile applications',
-            'Participated in the design, development, and deployment of large-scale integrations for major companies such as Supergiros and Grupo Éxito',
-            'Developed and maintained production projects using LTS versions of Java (8, 11, 17) and implemented TLS/SSL and Mutual TLS security protocols',
-            'Optimized workflows by enhancing the design of databases in Postgres and Oracle',
-            'Integrated systems through multiple REST APIs and contributed to updating the mobile application',
-            'Conducted load testing and unit testing with JMeter, JUnit, Mockito, and Spring Test'
+            'FullStack development in large-scale integrations (Supergiros, Grupo Éxito) applying SOLID principles and architecture patterns (MVC, SAGA)',
+            'Secure development in Java LTS (8, 11, 17) implementing TLS/SSL and mTLS protocols',
+            'Database design and optimization (Postgres, Oracle) ensuring integrity and efficiency',
+            'System integration via REST APIs and mobile migration to modern stack (Angular, Spring, Flutter)',
+            'Execution of load and unit testing (JMeter, JUnit, Mockito, Spring Test)'
           ],
-          technologies: ['Java', 'Spring Framework', 'Angular', 'JMeter', 'Azure', 'Microservices', 'PL/SQL', 'Git', 'GitLab', 'GitHub'],
+          technologies: ['Java Spring Boot', 'Angular', 'PL/SQL', 'Oracle', 'Postgres', 'Docker', 'Azure', 'Microservices', 'JMeter', 'Git', 'CI/CD'],
           logo: 'assets/images/companies/supergiros_logo.svg'
         },
         {
@@ -287,10 +312,9 @@ export class PortfolioService {
             'Responsible for the design, development, and implementation of software requirements',
             'Designed the microservices architecture for an administrative wiki portal for documenting new employee training',
             'Developed both back-end and front-end using Spring Data, Spring Boot, Spring Gateway, and Angular',
-            'Created a Single Page Application (SPA) using Bootstrap, HTML, CSS, and Angular',
             'Provided maintenance and technical support across company locations'
           ],
-          technologies: ['Spring Framework', 'Java', 'Spring Boot', 'Angular', 'HTML', 'CSS', 'JavaScript'],
+          technologies: ['Spring Framework', 'Java', 'Spring Boot', 'Angular', 'Docker', 'Information Security', 'HTML', 'CSS', 'JavaScript'],
           logo: 'assets/images/companies/Diverjuegos_logo.png'
         }
       ],
@@ -299,7 +323,7 @@ export class PortfolioService {
           institution: 'University of the Andes',
           degree: 'MSc in Software Engineering',
           period: '2024 - Present',
-          description: 'Currently in the second semester, covering topics such as software and web architecture, automated testing, web applications, cloud applications',
+          description: 'Currently in the final semester, covering topics such as software and web architecture, automated testing, web applications, cloud applications',
           logo: 'assets/images/universities/universidad-de-los-andes-logo.png'
         },
         {
@@ -346,18 +370,19 @@ export class PortfolioService {
       skills: {
         technical: [
           { name: 'Java', level: 100 },
+          { name: 'Spring Boot', level: 100 },
           { name: 'Git and GitHub', level: 100 },
           { name: 'SQL', level: 100 },
-          { name: 'Spring Framework', level: 80 },
-          { name: 'JMeter', level: 80 },
           { name: 'Angular', level: 80 },
+          { name: 'AWS', level: 80 },
           { name: 'PL/SQL', level: 80 },
+          { name: 'Docker', level: 80 },
+          { name: 'TypeScript', level: 80 },
           { name: 'HTML', level: 80 },
           { name: 'CSS', level: 80 },
           { name: 'Python', level: 80 },
-          { name: 'Docker', level: 80 },
-          { name: 'Maven', level: 80 },
-          { name: 'AWS', level: 60 },
+          { name: 'JMeter', level: 80 },
+          { name: 'Clean Code', level: 60 },
           { name: 'JavaScript', level: 60 }
         ],
         soft: [

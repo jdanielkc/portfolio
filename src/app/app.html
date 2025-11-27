@@ -4,11 +4,12 @@
     <a class="navbar-brand" (click)="scrollToSection('home')">
       <i class="bi bi-code-slash"></i> {{ translations().brand }}
     </a>
-    
+
     <!-- Language Selector -->
     <div class="language-selector">
       <div class="dropdown">
-        <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" id="languageDropdown" (click)="toggleLanguageDropdown()">
+        <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" id="languageDropdown"
+          (click)="toggleLanguageDropdown()">
           <i class="bi bi-translate"></i>
           {{ currentLanguage() === 'es' ? 'ES' : 'EN' }}
         </button>
@@ -36,44 +37,37 @@
     <div class="collapse navbar-collapse" [class.show]="isMenuOpen()">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('home')" 
-             [class.active]="activeSection() === 'home'">
+          <a class="nav-link" (click)="scrollToSection('home')" [class.active]="activeSection() === 'home'">
             {{ translations().nav.home }}
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('about')"
-             [class.active]="activeSection() === 'about'">
+          <a class="nav-link" (click)="scrollToSection('about')" [class.active]="activeSection() === 'about'">
             {{ translations().nav.about }}
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('experience')"
-             [class.active]="activeSection() === 'experience'">
+          <a class="nav-link" (click)="scrollToSection('experience')" [class.active]="activeSection() === 'experience'">
             {{ translations().nav.experience }}
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('education')"
-             [class.active]="activeSection() === 'education'">
+          <a class="nav-link" (click)="scrollToSection('education')" [class.active]="activeSection() === 'education'">
             {{ translations().nav.education }}
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('skills')"
-             [class.active]="activeSection() === 'skills'">
+          <a class="nav-link" (click)="scrollToSection('skills')" [class.active]="activeSection() === 'skills'">
             {{ translations().nav.skills }}
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('projects')"
-             [class.active]="activeSection() === 'projects'">
+          <a class="nav-link" (click)="scrollToSection('projects')" [class.active]="activeSection() === 'projects'">
             {{ translations().nav.projects }}
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('contact')"
-             [class.active]="activeSection() === 'contact'">
+          <a class="nav-link" (click)="scrollToSection('contact')" [class.active]="activeSection() === 'contact'">
             {{ translations().nav.contact }}
           </a>
         </li>
@@ -132,7 +126,7 @@
       <div class="col-lg-8 mx-auto">
         <div class="card">
           <div class="card-body">
-            <p class="lead">{{ translations().about.description }}</p>
+            <div class="lead" [innerHTML]="translations().about.description"></div>
           </div>
         </div>
       </div>
@@ -146,36 +140,36 @@
     <h2 class="section-title text-white">{{ translations().experience.title }}</h2>
     <div class="timeline">
       @for (exp of portfolioData().experiences; track $index) {
-        <div class="timeline-item">
-          <div class="timeline-card card">
-            <div class="card-body">
-              <div class="experience-header">
-                @if (exp.logo) {
-                  <div class="company-logo" [class.dark-bg]="exp.company === 'Diverjuegos SAS'">
-                    <img [ngSrc]="exp.logo" [alt]="exp.company + ' logo'" fill priority />
-                  </div>
-                }
-                <div class="experience-title-section">
-                  <h3 class="card-title">{{ exp.position }}</h3>
-                  <h5 class="company-name">{{ exp.company }}</h5>
-                  <p class="period">
-                    <i class="bi bi-calendar-event"></i> {{ exp.period }}
-                  </p>
-                </div>
+      <div class="timeline-item">
+        <div class="timeline-card card">
+          <div class="card-body">
+            <div class="experience-header">
+              @if (exp.logo) {
+              <div class="company-logo" [class.dark-bg]="exp.company === 'Diverjuegos SAS'">
+                <img [ngSrc]="exp.logo" [alt]="exp.company + ' logo'" fill priority />
               </div>
-              <ul class="description-list">
-                @for (desc of exp.description; track $index) {
-                  <li>{{ desc }}</li>
-                }
-              </ul>
-              <div class="technologies">
-                @for (tech of exp.technologies; track $index) {
-                  <span class="badge">{{ tech }}</span>
-                }
+              }
+              <div class="experience-title-section">
+                <h3 class="card-title">{{ exp.position }}</h3>
+                <h5 class="company-name">{{ exp.company }}</h5>
+                <p class="period">
+                  <i class="bi bi-calendar-event"></i> {{ exp.period }}
+                </p>
               </div>
+            </div>
+            <ul class="description-list">
+              @for (desc of exp.description; track $index) {
+              <li>{{ desc }}</li>
+              }
+            </ul>
+            <div class="technologies">
+              @for (tech of exp.technologies; track $index) {
+              <span class="badge">{{ tech }}</span>
+              }
             </div>
           </div>
         </div>
+      </div>
       }
     </div>
   </div>
@@ -187,29 +181,29 @@
     <h2 class="section-title">{{ translations().education.title }}</h2>
     <div class="row">
       @for (edu of portfolioData().education; track $index) {
-        <div class="col-lg-6 mb-4">
-          <div class="card education-card">
-            <div class="card-body">
-              <div class="education-header">
-                @if (edu.logo) {
-                  <div class="university-logo">
-                    <img [ngSrc]="edu.logo" [alt]="edu.institution + ' logo'" fill />
-                  </div>
-                }
-                <div class="education-title-section">
-                  <h3 class="card-title">{{ edu.degree }}</h3>
-                  <h5 class="institution-name">{{ edu.institution }}</h5>
-                  <p class="period">
-                    <i class="bi bi-calendar-event"></i> {{ edu.period }}
-                  </p>
-                </div>
+      <div class="col-lg-6 mb-4">
+        <div class="card education-card">
+          <div class="card-body">
+            <div class="education-header">
+              @if (edu.logo) {
+              <div class="university-logo">
+                <img [ngSrc]="edu.logo" [alt]="edu.institution + ' logo'" fill />
               </div>
-              @if (edu.description) {
-                <p class="description">{{ edu.description }}</p>
               }
+              <div class="education-title-section">
+                <h3 class="card-title">{{ edu.degree }}</h3>
+                <h5 class="institution-name">{{ edu.institution }}</h5>
+                <p class="period">
+                  <i class="bi bi-calendar-event"></i> {{ edu.period }}
+                </p>
+              </div>
             </div>
+            @if (edu.description) {
+            <p class="description">{{ edu.description }}</p>
+            }
           </div>
         </div>
+      </div>
       }
     </div>
   </div>
@@ -225,15 +219,15 @@
           <div class="card-body">
             <h3 class="card-title">{{ translations().skills.technical }}</h3>
             @for (skill of portfolioData().skills.technical; track $index) {
-              <div class="skill-item">
-                <div class="skill-header">
-                  <span class="skill-name">{{ skill.name }}</span>
-                  <span class="skill-percentage">{{ skill.level }}%</span>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar" [style.width.%]="skill.level"></div>
-                </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">{{ skill.name }}</span>
+                <span class="skill-percentage">{{ skill.level }}%</span>
               </div>
+              <div class="progress">
+                <div class="progress-bar" [style.width.%]="skill.level"></div>
+              </div>
+            </div>
             }
           </div>
         </div>
@@ -244,10 +238,10 @@
             <h3 class="card-title">{{ translations().skills.soft }}</h3>
             <div class="soft-skills">
               @for (skill of portfolioData().skills.soft; track $index) {
-                <div class="soft-skill-item">
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span>{{ skill }}</span>
-                </div>
+              <div class="soft-skill-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>{{ skill }}</span>
+              </div>
               }
             </div>
           </div>
@@ -263,29 +257,29 @@
     <h2 class="section-title">{{ translations().projects.title }}</h2>
     <div class="row">
       @for (project of portfolioData().projects; track $index) {
-        <div class="col-lg-4 mb-4">
-          <div class="card project-card">
-            <div class="project-image">
-              <i class="bi bi-code-square"></i>
+      <div class="col-lg-4 mb-4">
+        <div class="card project-card">
+          <div class="project-image">
+            <i class="bi bi-code-square"></i>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">{{ project.title }}</h3>
+            <p class="card-text">{{ project.description }}</p>
+            <div class="technologies mb-3">
+              @for (tech of project.technologies; track $index) {
+              <span class="badge">{{ tech }}</span>
+              }
             </div>
-            <div class="card-body">
-              <h3 class="card-title">{{ project.title }}</h3>
-              <p class="card-text">{{ project.description }}</p>
-              <div class="technologies mb-3">
-                @for (tech of project.technologies; track $index) {
-                  <span class="badge">{{ tech }}</span>
-                }
-              </div>
-              <div class="project-links">
-                @if (project.github) {
-                  <a [href]="project.github" target="_blank" class="btn btn-sm btn-outline-primary">
-                    <i class="bi bi-github"></i> GitHub
-                  </a>
-                }
-              </div>
+            <div class="project-links">
+              @if (project.github) {
+              <a [href]="project.github" target="_blank" class="btn btn-sm btn-outline-primary">
+                <i class="bi bi-github"></i> GitHub
+              </a>
+              }
             </div>
           </div>
         </div>
+      </div>
       }
     </div>
   </div>
