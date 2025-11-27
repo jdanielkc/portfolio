@@ -16,7 +16,7 @@ export class App implements OnInit {
   currentLanguage = this.translationService.currentLanguage;
   translations = computed(() => this.translationService.getTranslations());
   portfolioData = computed(() => this.portfolioService.getData(this.currentLanguage()));
-  
+
   isMenuOpen = signal(false);
   isLanguageDropdownOpen = signal(false);
   activeSection = signal('home');
@@ -70,9 +70,9 @@ export class App implements OnInit {
   }
 
   downloadCV(): void {
-    const cvPath = this.currentLanguage() === 'es' 
-      ? 'CV_JDGA_SPANISH/template.tex' 
-      : 'CV_JDGA_ENGLISH/template.tex';
-    window.open(cvPath, '_blank');
+    const cvUrl = this.currentLanguage() === 'es'
+      ? 'https://drive.google.com/file/d/1k3cqvcsVNKJ7SZRRnjUJAMzixq-g9-DA/view?usp=sharing'
+      : 'https://drive.google.com/file/d/120eapGxC6EBrFAQNcFlYXm9tRVrue1sS/view?usp=sharing';
+    window.open(cvUrl, '_blank');
   }
 }
