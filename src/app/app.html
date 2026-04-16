@@ -67,6 +67,11 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" (click)="scrollToSection('certifications')" [class.active]="activeSection() === 'certifications'">
+            {{ translations().nav.certifications }}
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" (click)="scrollToSection('contact')" [class.active]="activeSection() === 'contact'">
             {{ translations().nav.contact }}
           </a>
@@ -124,7 +129,7 @@
     <h2 class="section-title">{{ translations().about.title }}</h2>
     <div class="row">
       <div class="col-lg-8 mx-auto">
-        <div class="card">
+        <div class="card animate-on-scroll">
           <div class="card-body">
             <div class="lead" [innerHTML]="translations().about.description"></div>
           </div>
@@ -140,7 +145,7 @@
     <h2 class="section-title text-white">{{ translations().experience.title }}</h2>
     <div class="timeline">
       @for (exp of portfolioData().experiences; track $index) {
-      <div class="timeline-item">
+      <div class="timeline-item animate-on-scroll" [style.transition-delay]="$index * 100 + 'ms'">
         <div class="timeline-card card">
           <div class="card-body">
             <div class="experience-header">
@@ -182,7 +187,7 @@
     <div class="row">
       @for (edu of portfolioData().education; track $index) {
       <div class="col-lg-6 mb-4">
-        <div class="card education-card">
+        <div class="card education-card animate-on-scroll" [style.transition-delay]="$index * 100 + 'ms'">
           <div class="card-body">
             <div class="education-header">
               @if (edu.logo) {
@@ -206,6 +211,30 @@
       </div>
       }
     </div>
+    <!-- Awards -->
+    @if (portfolioData().awards && portfolioData().awards.length > 0) {
+    <div class="awards-subsection">
+      <h3 class="subsection-title animate-on-scroll">{{ translations().awards.title }}</h3>
+      <div class="row">
+        @for (award of portfolioData().awards; track $index) {
+        <div class="col-md-6 mb-3">
+          <div class="card award-card animate-on-scroll" [style.transition-delay]="$index * 100 + 'ms'">
+            <div class="card-body">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-trophy-fill award-icon"></i>
+                <div>
+                  <h5 class="award-title">{{ award.title }}</h5>
+                  <p class="award-issuer">{{ award.issuer }}</p>
+                  <small class="award-date text-muted">{{ award.date }}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    }
   </div>
 </section>
 
@@ -215,7 +244,7 @@
     <h2 class="section-title text-white">{{ translations().skills.title }}</h2>
     <div class="row">
       <div class="col-lg-6 mb-4">
-        <div class="card skills-card">
+        <div class="card skills-card animate-on-scroll">
           <div class="card-body">
             <h3 class="card-title">{{ translations().skills.technical }}</h3>
             @for (skill of portfolioData().skills.technical; track $index) {
@@ -233,7 +262,7 @@
         </div>
       </div>
       <div class="col-lg-6 mb-4">
-        <div class="card skills-card">
+        <div class="card skills-card animate-on-scroll" style="transition-delay: 100ms;">
           <div class="card-body">
             <h3 class="card-title">{{ translations().skills.soft }}</h3>
             <div class="soft-skills">
@@ -244,6 +273,24 @@
               </div>
               }
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mx-auto mb-4">
+        <div class="card skills-card animate-on-scroll" style="transition-delay: 200ms;">
+          <div class="card-body">
+            <h3 class="card-title">{{ translations().skills.languages }}</h3>
+            @for (lang of portfolioData().languages; track $index) {
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">{{ lang.name }}</span>
+                <span class="skill-percentage">{{ lang.level }}%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" [style.width.%]="lang.level"></div>
+              </div>
+            </div>
+            }
           </div>
         </div>
       </div>
@@ -258,7 +305,7 @@
     <div class="row">
       @for (project of portfolioData().projects; track $index) {
       <div class="col-lg-4 mb-4">
-        <div class="card project-card">
+        <div class="card project-card animate-on-scroll" [style.transition-delay]="$index * 100 + 'ms'">
           <div class="project-image">
             <i class="bi bi-code-square"></i>
           </div>
@@ -285,6 +332,27 @@
   </div>
 </section>
 
+<!-- Certifications Section -->
+<section id="certifications" class="section bg-light">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll">{{ translations().certifications.title }}</h2>
+    <div class="row justify-content-center">
+      @for (cert of portfolioData().certifications; track $index) {
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card cert-card animate-on-scroll" [style.transition-delay]="$index * 80 + 'ms'">
+          <div class="card-body text-center">
+            <i class="bi {{ cert.icon }} cert-icon"></i>
+            <h6 class="cert-name">{{ cert.name }}</h6>
+            <p class="cert-issuer">{{ cert.issuer }}</p>
+            <small class="cert-date text-muted">{{ cert.date }}</small>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
 <!-- Contact Section -->
 <section id="contact" class="section">
   <div class="container">
@@ -294,7 +362,7 @@
       <div class="col-lg-8">
         <div class="row">
           <div class="col-md-4 mb-4">
-            <div class="contact-card card text-center">
+            <div class="contact-card card text-center animate-on-scroll">
               <div class="card-body">
                 <div class="contact-icon">
                   <i class="bi bi-envelope-fill"></i>
@@ -307,7 +375,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="contact-card card text-center">
+            <div class="contact-card card text-center animate-on-scroll" style="transition-delay: 100ms;">
               <div class="card-body">
                 <div class="contact-icon">
                   <i class="bi bi-telephone-fill"></i>
@@ -320,7 +388,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="contact-card card text-center">
+            <div class="contact-card card text-center animate-on-scroll" style="transition-delay: 200ms;">
               <div class="card-body">
                 <div class="contact-icon">
                   <i class="bi bi-geo-alt-fill"></i>
@@ -339,7 +407,7 @@
 <!-- Footer -->
 <footer class="footer">
   <div class="container text-center">
-    <p>&copy; 2025 {{ translations().hero.name }}. All rights reserved.</p>
+    <p>&copy; {{ currentYear }} {{ translations().hero.name }}. All rights reserved.</p>
     <div class="footer-links">
       <a [href]="portfolioData().contact.linkedin" target="_blank">
         <i class="bi bi-linkedin"></i>

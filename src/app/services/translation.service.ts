@@ -9,6 +9,7 @@ export interface Translation {
     education: string;
     skills: string;
     projects: string;
+    certifications: string;
     contact: string;
   };
   hero: {
@@ -34,6 +35,7 @@ export interface Translation {
     title: string;
     technical: string;
     soft: string;
+    languages: string;
   };
   projects: {
     title: string;
@@ -45,6 +47,12 @@ export interface Translation {
     email: string;
     phone: string;
     location: string;
+  };
+  certifications: {
+    title: string;
+  };
+  awards: {
+    title: string;
   };
 }
 
@@ -64,6 +72,7 @@ export class TranslationService {
         education: 'Educación',
         skills: 'Habilidades',
         projects: 'Proyectos',
+        certifications: 'Certificaciones',
         contact: 'Contacto'
       },
       hero: {
@@ -88,7 +97,8 @@ export class TranslationService {
       skills: {
         title: 'Habilidades',
         technical: 'Habilidades Técnicas',
-        soft: 'Habilidades Blandas'
+        soft: 'Habilidades Blandas',
+        languages: 'Idiomas'
       },
       projects: {
         title: 'Proyectos',
@@ -100,6 +110,12 @@ export class TranslationService {
         email: 'Correo',
         phone: 'Teléfono',
         location: 'Ubicación'
+      },
+      certifications: {
+        title: 'Certificaciones'
+      },
+      awards: {
+        title: 'Reconocimientos'
       }
     },
     en: {
@@ -111,6 +127,7 @@ export class TranslationService {
         education: 'Education',
         skills: 'Skills',
         projects: 'Projects',
+        certifications: 'Certifications',
         contact: 'Contact'
       },
       hero: {
@@ -135,7 +152,8 @@ export class TranslationService {
       skills: {
         title: 'Skills',
         technical: 'Technical Skills',
-        soft: 'Soft Skills'
+        soft: 'Soft Skills',
+        languages: 'Languages'
       },
       projects: {
         title: 'Projects',
@@ -147,6 +165,12 @@ export class TranslationService {
         email: 'Email',
         phone: 'Phone',
         location: 'Location'
+      },
+      certifications: {
+        title: 'Certifications'
+      },
+      awards: {
+        title: 'Awards'
       }
     }
   };
