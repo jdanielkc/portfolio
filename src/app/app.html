@@ -305,9 +305,13 @@
     <div class="row">
       @for (project of portfolioData().projects; track $index) {
       <div class="col-lg-4 mb-4">
-        <div class="card project-card animate-on-scroll" [style.transition-delay]="$index * 100 + 'ms'">
+        <div class="card project-card animate-on-scroll h-100" [style.transition-delay]="$index * 100 + 'ms'">
           <div class="project-image">
-            <i class="bi bi-code-square"></i>
+            @if (project.image) {
+              <img [src]="project.image" [alt]="project.title" />
+            } @else {
+              <i class="bi bi-code-square"></i>
+            }
           </div>
           <div class="card-body">
             <h3 class="card-title">{{ project.title }}</h3>

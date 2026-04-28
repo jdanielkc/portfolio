@@ -121,25 +121,28 @@ export class PortfolioService {
           title: 'Sistema de Clasificación de Patologías Cardiovasculares',
           description: 'Diseño e implementación de un sistema de clasificación de patologías cardiovasculares utilizando redes neuronales recurrentes y convolucionales a partir de señales electrocardiográficas.',
           technologies: ['Python', 'Keras', 'TensorFlow', 'Deep Learning', 'Procesamiento de Señales ECG'],
-          github: 'https://github.com/jdanielkc'
+          image: 'assets/images/projects/ecg-classification.png',
+          github: 'https://github.com/jdanielkc/DeteccionECG'
         },
         {
           title: 'Portal Wiki Administrativo con Microservicios',
           description: 'Arquitectura de microservicios para portal de documentación y capacitación de nuevos empleados con autenticación y gestión de contenidos.',
-          technologies: ['Spring Boot', 'Spring Data', 'Spring Gateway', 'Angular', 'PostgreSQL', 'Docker'],
-          github: 'https://github.com/jdanielkc'
+          technologies: ['Spring Boot', 'Spring Data', 'Spring Gateway', 'Angular', 'PostgreSQL', 'Docker']
         },
         {
           title: 'Modelo de Predicción de Abandono de Compras',
           description: 'Desarrollo de modelo de machine learning para predecir la probabilidad de abandono de compra utilizando técnicas de optimización y visualización en PowerBI.',
-          technologies: ['Python', 'Scikit-learn', 'Random Forest', 'SVM', 'PowerBI', 'Apache Spark'],
-          github: 'https://github.com/jdanielkc'
+          technologies: ['Python', 'Scikit-learn', 'Random Forest', 'SVM', 'PowerBI', 'Apache Spark']
         },
         {
           title: 'Integraciones Empresariales de Gran Escala',
           description: 'Desarrollo y despliegue de integraciones para empresas como Supergiros y Grupo Éxito utilizando arquitectura de microservicios y patrones de diseño.',
-          technologies: ['Java', 'Spring Framework', 'Angular', 'Flutter', 'PL/SQL', 'Oracle', 'Postgres'],
-          github: 'https://github.com/jdanielkc'
+          technologies: ['Java', 'Spring Framework', 'Angular', 'Flutter', 'PL/SQL', 'Oracle', 'Postgres']
+        },
+        {
+          title: 'Sistema de Gestión Documental',
+          description: 'Desarrollo de soluciones full stack en un sistema de gestión documental (Colombia, México y Perú), con almacenamiento eficiente en AWS, arquitectura Hexagonal y Orientada a Eventos.',
+          technologies: ['Java', 'Spring Boot', 'Angular', 'AWS', 'S3', 'EKS', 'ECS', 'Cognito', 'IAM', 'TypeScript']
         }
       ],
       skills: {
@@ -198,52 +201,40 @@ export class PortfolioService {
       ],
       certifications: [
         {
-          name: 'Simulacro de Prueba SFPC',
-          issuer: 'AMV',
+          name: 'Scrum Foundation Professional Certificate (SFPC)',
+          issuer: 'CertiProf',
           date: '2023',
           icon: 'bi-award'
         },
         {
-          name: 'Simulacro de Prueba SFC',
-          issuer: 'AMV',
+          name: 'Scrum Fundamentals Certified (SFC)',
+          issuer: 'Scrumstudy',
           date: '2023',
           icon: 'bi-award'
-        },
-        {
-          name: 'AWS Cloud Practitioner',
-          issuer: 'AWS',
-          date: 'En curso',
-          icon: 'bi-cloud'
         },
         {
           name: 'Control de versiones con Git y GitHub',
-          issuer: 'Platzi',
+          issuer: 'Universidad de los Andes',
           date: '2024',
           icon: 'bi-github'
         },
         {
-          name: 'Curso de Diagramas de UML',
-          issuer: 'Platzi',
+          name: 'Introducción a UML',
+          issuer: 'Universidad de los Andes',
           date: '2024',
           icon: 'bi-diagram-3'
         },
         {
-          name: 'Curso de Python',
-          issuer: 'Platzi',
-          date: '2024',
-          icon: 'bi-code-slash'
-        },
-        {
-          name: 'Curso de PL/SQL',
-          issuer: 'Platzi',
+          name: 'PL/SQL Desde Cero',
+          issuer: 'Udemy',
           date: '2023',
           icon: 'bi-database'
         },
         {
-          name: 'Curso Profesional de Git y GitHub',
-          issuer: 'Platzi',
+          name: 'Python for Everybody (Specialization)',
+          issuer: 'University of Michigan',
           date: '2022',
-          icon: 'bi-github'
+          icon: 'bi-code-slash'
         }
       ],
       software: [
@@ -346,25 +337,28 @@ export class PortfolioService {
           title: 'Cardiovascular Pathology Classification System',
           description: 'Design and implementation of a classification system for cardiovascular pathologies using recurrent and convolutional neural networks based on ECG signals',
           technologies: ['Python', 'Keras', 'TensorFlow', 'Deep Learning', 'ECG Signal Processing'],
+          image: 'assets/images/projects/ecg-classification.png',
           github: 'https://github.com/jdanielkc'
         },
         {
           title: 'Administrative Wiki Portal with Microservices',
           description: 'Microservices architecture for documentation portal and training of new employees with authentication and content management',
-          technologies: ['Spring Boot', 'Spring Data', 'Spring Gateway', 'Angular', 'PostgreSQL', 'Docker'],
-          github: 'https://github.com/jdanielkc'
+          technologies: ['Spring Boot', 'Spring Data', 'Spring Gateway', 'Angular', 'PostgreSQL', 'Docker']
         },
         {
           title: 'Purchase Abandonment Prediction Model',
           description: 'Development of machine learning model to predict the probability of purchase abandonment using optimization techniques and PowerBI visualization',
-          technologies: ['Python', 'Scikit-learn', 'Random Forest', 'SVM', 'PowerBI', 'Apache Spark'],
-          github: 'https://github.com/jdanielkc'
+          technologies: ['Python', 'Scikit-learn', 'Random Forest', 'SVM', 'PowerBI', 'Apache Spark']
         },
         {
           title: 'Large-Scale Enterprise Integrations',
           description: 'Development and deployment of integrations for companies such as Supergiros and Grupo Éxito using microservices architecture and design patterns',
-          technologies: ['Java', 'Spring Framework', 'Angular', 'Flutter', 'PL/SQL', 'Oracle', 'Postgres'],
-          github: 'https://github.com/jdanielkc'
+          technologies: ['Java', 'Spring Framework', 'Angular', 'Flutter', 'PL/SQL', 'Oracle', 'Postgres']
+        },
+        {
+          title: 'Document Management System',
+          description: 'Full-stack development of a document management system (Colombia, Mexico, and Peru), with efficient AWS storage, Hexagonal and Event-Driven Architecture.',
+          technologies: ['Java', 'Spring Boot', 'Angular', 'AWS', 'S3', 'EKS', 'ECS', 'Cognito', 'IAM', 'TypeScript']
         }
       ],
       skills: {
@@ -435,12 +429,6 @@ export class PortfolioService {
           icon: 'bi-award'
         },
         {
-          name: 'AWS Academy Cloud Foundations',
-          issuer: 'Amazon Web Services',
-          date: 'In Progress',
-          icon: 'bi-cloud'
-        },
-        {
           name: 'Version Control with Git and GitHub',
           issuer: 'University of the Andes',
           date: '2024',
@@ -453,22 +441,16 @@ export class PortfolioService {
           icon: 'bi-diagram-3'
         },
         {
-          name: 'Python Programming',
-          issuer: 'University of the Andes',
-          date: '2024',
-          icon: 'bi-code-slash'
-        },
-        {
           name: 'PL/SQL From Scratch',
           issuer: 'Udemy',
           date: '2023',
           icon: 'bi-database'
         },
         {
-          name: 'Professional Git and GitHub Course',
-          issuer: 'Platzi',
+          name: 'Python for Everybody (Specialization)',
+          issuer: 'University of Michigan',
           date: '2022',
-          icon: 'bi-github'
+          icon: 'bi-code-slash'
         }
       ],
       software: [
