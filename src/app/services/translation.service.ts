@@ -78,7 +78,7 @@ export class TranslationService {
       hero: {
         greeting: 'Hola, soy',
         name: 'Jose Daniel Garcia Arias',
-        title: 'Ingeniero Electrónico | MSc en Ingeniería de Software',
+        title: 'Ingeniero Electrónico | Candidato a MSc en Ingeniería de Software',
         description: 'Ingeniero electrónico con experiencia en desarrollo de software full stack y arquitectura cloud. He participado en la integración de importantes empresas como Grupo Éxito, Supergiros y Carvajal Tecnología y Servicios. Mis fortalezas técnicas incluyen Java, Spring Boot, Angular, AWS, y arquitecturas modernas como Hexagonal y Orientada a Eventos.',
         downloadCV: 'Descargar CV',
         contactMe: 'Contáctame'
@@ -133,7 +133,7 @@ export class TranslationService {
       hero: {
         greeting: 'Hello, I am',
         name: 'Jose Daniel Garcia Arias',
-        title: 'Electronic Engineer | MSc in Software Engineering',
+        title: 'Electronic Engineer | MSc in Software Engineering Candidate',
         description: 'Electronic engineer with experience in full-stack software development and cloud architecture. I have participated in the integration of major companies such as Grupo Éxito, Supergiros, and Carvajal Tecnología y Servicios. My technical strengths include Java, Spring Boot, Angular, AWS, and modern architectures such as Hexagonal and Event-Driven.',
         downloadCV: 'Download CV',
         contactMe: 'Contact Me'
