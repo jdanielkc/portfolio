@@ -202,10 +202,10 @@ export class PortfolioService {
         {
           title: 'AG Project Manager',
           category: 'personal',
-          context: 'Freelance · Empresa inmobiliaria',
+          context: 'Proyecto propio · Sector inmobiliario',
           status: 'production',
           statusLabel: 'En producción',
-          description: 'Sistema de gestión de proyectos y operación para una empresa inmobiliaria: tableros Kanban por empresa y área, inventario de inmuebles, calendario con recordatorios, organigrama y dashboard de productividad.',
+          description: 'Sistema de gestión de proyectos y operación para el sector inmobiliario: tableros Kanban por empresa y área, inventario de inmuebles, calendario con recordatorios, organigrama y dashboard de productividad.',
           highlights: [
             'Monolito modular con Spring Modulith (11 módulos con fronteras verificadas en tests) y microservicios de notificaciones y auditoría',
             'Outbox transaccional hacia RabbitMQ, correos disparados por eventos y auditoría append-only en MongoDB',
@@ -525,10 +525,10 @@ export class PortfolioService {
         {
           title: 'AG Project Manager',
           category: 'personal',
-          context: 'Freelance · Real estate company',
+          context: 'Own project · Real estate sector',
           status: 'production',
           statusLabel: 'In production',
-          description: 'Project and operations management system for a real estate company: Kanban boards per company and area, property inventory, calendar with reminders, org chart, and productivity dashboard.',
+          description: 'Project and operations management system for the real estate sector: Kanban boards per company and area, property inventory, calendar with reminders, org chart, and productivity dashboard.',
           highlights: [
             'Spring Modulith modular monolith (11 modules with boundaries verified in tests) plus notification and audit microservices',
             'Transactional outbox to RabbitMQ, event-driven emails, and append-only audit trail in MongoDB',

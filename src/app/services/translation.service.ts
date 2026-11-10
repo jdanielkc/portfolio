@@ -108,7 +108,7 @@ export class TranslationService {
         greeting: 'Hola, soy',
         name: 'Jose Daniel Garcia Arias',
         title: 'Ingeniero Electrónico | MSc en Ingeniería de Software',
-        description: 'Diseño y construyo sistemas de software de punta a punta: arquitecturas distribuidas y orientadas a eventos, soluciones cloud e integraciones de gran escala, eligiendo la tecnología que pide cada problema. Hoy lo hago en Carvajal, en una plataforma para Colombia, México y Perú, y como freelance mantengo en producción un sistema de gestión para una empresa inmobiliaria.',
+        description: 'Diseño y construyo sistemas de software de punta a punta: arquitecturas distribuidas y orientadas a eventos, soluciones cloud e integraciones de gran escala, eligiendo la tecnología que pide cada problema. Hoy lo hago en Carvajal, en una plataforma para Colombia, México y Perú, y he llevado proyectos propios desde la arquitectura hasta producción.',
         downloadCV: 'Descargar CV',
         contactMe: 'Contáctame'
       },
@@ -134,7 +134,7 @@ export class TranslationService {
       },
       projects: {
         title: 'Proyectos',
-        personalTitle: 'Proyectos propios y freelance',
+        personalTitle: 'Proyectos propios',
         personalSubtitle: 'Productos que diseño y construyo de punta a punta',
         professionalTitle: 'Casos profesionales',
         professionalSubtitle: 'Algunos sistemas en los que trabajé como parte de un equipo',
@@ -174,7 +174,7 @@ export class TranslationService {
         greeting: 'Hello, I am',
         name: 'Jose Daniel Garcia Arias',
         title: 'Electronic Engineer | MSc in Software Engineering',
-        description: 'I design and build software systems end to end: distributed and event-driven architectures, cloud solutions, and large-scale integrations, choosing the technology each problem calls for. I currently do this at Carvajal, on a platform serving Colombia, Mexico, and Peru, and as a freelancer I run a production management system for a real estate company.',
+        description: 'I design and build software systems end to end: distributed and event-driven architectures, cloud solutions, and large-scale integrations, choosing the technology each problem calls for. I currently do this at Carvajal, on a platform serving Colombia, Mexico, and Peru, and I have taken my own projects from architecture to production.',
         downloadCV: 'Download CV',
         contactMe: 'Contact Me'
       },
@@ -200,7 +200,7 @@ export class TranslationService {
       },
       projects: {
         title: 'Projects',
-        personalTitle: 'Own & Freelance Projects',
+        personalTitle: 'Own Projects',
         personalSubtitle: 'Products I design and build end to end',
         professionalTitle: 'Professional Work',
         professionalSubtitle: 'Systems I worked on as part of a team',
