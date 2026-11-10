@@ -27,6 +27,16 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "CV_Jose_Daniel_Garcia_Arias_ES.pdf",
+                "input": "CV_JDGA_SPANISH",
+                "output": "cv"
+              },
+              {
+                "glob": "CV_Jose_Daniel_Garcia_Arias_EN.pdf",
+                "input": "CV_JDGA_ENGLISH",
+                "output": "cv"
               }
             ],
             "styles": [

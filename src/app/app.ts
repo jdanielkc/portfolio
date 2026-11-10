@@ -109,9 +109,14 @@ export class App implements OnInit, AfterViewInit {
   }
 
   downloadCV(): void {
-    const cvUrl = this.currentLanguage() === 'es'
-      ? 'https://drive.google.com/file/d/1cnBhnl5xofVk0pXUMB5m7EFYxIvBeFPy/view?usp=sharing'
-      : 'https://drive.google.com/file/d/1PUhi_zx-gfH-wVxC-t42DlGztq0Dox49/view?usp=sharing';
-    window.open(cvUrl, '_blank', 'noopener,noreferrer');
+    const fileName = this.currentLanguage() === 'es'
+      ? 'CV_Jose_Daniel_Garcia_Arias_ES.pdf'
+      : 'CV_Jose_Daniel_Garcia_Arias_EN.pdf';
+    const link = this.doc.createElement('a');
+    link.href = `cv/${fileName}`;
+    link.download = fileName;
+    this.doc.body.appendChild(link);
+    link.click();
+    link.remove();
   }
 }
