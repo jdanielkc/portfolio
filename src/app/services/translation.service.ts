@@ -13,6 +13,7 @@ export interface Translation {
     contact: string;
   };
   hero: {
+    badge: string;
     greeting: string;
     name: string;
     title: string;
@@ -22,7 +23,9 @@ export interface Translation {
   };
   about: {
     title: string;
+    subtitle: string;
     description: string;
+    pillarsTitle: string;
   };
   experience: {
     title: string;
@@ -34,12 +37,20 @@ export interface Translation {
   skills: {
     title: string;
     technical: string;
+    software: string;
     soft: string;
     languages: string;
   };
   projects: {
     title: string;
-    viewProject: string;
+    personalTitle: string;
+    personalSubtitle: string;
+    professionalTitle: string;
+    professionalSubtitle: string;
+    privateRepo: string;
+  };
+  footer: {
+    rights: string;
   };
   contact: {
     title: string;
@@ -60,11 +71,28 @@ export interface Translation {
   providedIn: 'root'
 })
 export class TranslationService {
-  currentLanguage = signal<'en' | 'es'>('es');
+  private static readonly storageKey = 'portfolio-lang';
+
+  currentLanguage = signal<'en' | 'es'>(TranslationService.detectInitialLanguage());
+
+  private static detectInitialLanguage(): 'en' | 'es' {
+    if (typeof window === 'undefined') {
+      return 'es';
+    }
+    try {
+      const saved = window.localStorage.getItem(TranslationService.storageKey);
+      if (saved === 'en' || saved === 'es') {
+        return saved;
+      }
+    } catch {
+      // localStorage can be blocked (privacy mode); fall back to the browser language.
+    }
+    return window.navigator.language?.toLowerCase().startsWith('es') ? 'es' : 'en';
+  }
 
   private readonly translations: Record<'en' | 'es', Translation> = {
     es: {
-      brand: 'Portafolio',
+      brand: 'JDGA',
       nav: {
         home: 'Inicio',
         about: 'Sobre Mí',
@@ -76,50 +104,61 @@ export class TranslationService {
         contact: 'Contacto'
       },
       hero: {
+        badge: 'Desarrollador Senior Full Stack',
         greeting: 'Hola, soy',
         name: 'Jose Daniel Garcia Arias',
-        title: 'Ingeniero Electrónico | Candidato a MSc en Ingeniería de Software',
-        description: 'Ingeniero electrónico con experiencia en desarrollo de software full stack y arquitectura cloud. He participado en la integración de importantes empresas como Grupo Éxito, Supergiros y Carvajal Tecnología y Servicios. Mis fortalezas técnicas incluyen Java, Spring Boot, Angular, AWS, y arquitecturas modernas como Hexagonal y Orientada a Eventos.',
+        title: 'Ingeniero Electrónico | MSc en Ingeniería de Software',
+        description: 'Construyo sistemas con Java, Spring Boot, Angular y AWS bajo arquitecturas Hexagonal y Orientada a Eventos. Hoy trabajo en Carvajal Tecnología y Servicios en un sistema de gestión documental para Colombia, México y Perú.',
         downloadCV: 'Descargar CV',
         contactMe: 'Contáctame'
       },
       about: {
         title: 'Sobre Mí',
-        description: '<p>Soy un ingeniero electrónico con experiencia en desarrollo de software full stack y arquitectura cloud. He participado en la integración de importantes empresas del país, como Grupo Éxito, Supergiros y Carvajal Tecnología y Servicios. Mis fortalezas técnicas incluyen Java, Spring Boot, Angular, AWS, PL/SQL y arquitecturas modernas como Hexagonal y Orientada a Eventos.</p><p>Como Candidato a Magíster en Ingeniería de Software por la Universidad de los Andes, complemento mi experiencia técnica con conocimientos avanzados en arquitectura ágil, desarrollo nativo en la nube, pruebas automatizadas y prácticas DevOps.</p><p>A lo largo de mi carrera he trabajado traduciendo requisitos del negocio en soluciones técnicas efectivas, aplicando principios SOLID y Clean Code, optimizando recursos cloud y abordando desafíos complejos en distintos dominios del desarrollo de software. Mi formación multidisciplinaria me permite adaptarme a diversos contextos tecnológicos y contribuir en diferentes áreas de la ingeniería de software.</p>'
+        subtitle: 'Ingeniería de software a gran escala, arquitectura cloud y liderazgo técnico',
+        description: '<p>Soy <strong>Ingeniero Electrónico</strong> y <strong>Magíster en Ingeniería de Software por la Universidad de los Andes</strong>, con amplia experiencia en desarrollo de software full stack y arquitectura cloud. Trabajo en Carvajal Tecnología y Servicios y he participado en integraciones de gran escala para empresas del país como Grupo Éxito y Supergiros. Mis fortalezas técnicas incluyen Java, Spring Boot, Angular, AWS, PL/SQL y arquitecturas modernas como Hexagonal y Orientada a Eventos.</p><p>Mi formación de posgrado respalda mi experiencia práctica con conocimientos avanzados en arquitectura ágil, desarrollo nativo en la nube, pruebas automatizadas y prácticas DevOps.</p><p>A lo largo de mi carrera he trabajado traduciendo requisitos del negocio en soluciones técnicas efectivas, aplicando principios SOLID y Clean Code, optimizando recursos cloud y abordando desafíos complejos en distintos dominios del desarrollo de software. Mi perfil multidisciplinario me permite adaptarme a diversos contextos tecnológicos y liderar soluciones en diferentes áreas de la ingeniería de software.</p>',
+        pillarsTitle: 'Pilares de Especialización'
       },
       experience: {
         title: 'Experiencia Profesional',
-        present: 'Presente'
+        present: 'Actualmente'
       },
       education: {
         title: 'Educación'
       },
       skills: {
-        title: 'Habilidades',
-        technical: 'Habilidades Técnicas',
-        soft: 'Habilidades Blandas',
+        title: 'Competencias y Ecosistema Técnico',
+        technical: 'Habilidades Duras',
+        software: 'Cloud, DevOps y Herramientas',
+        soft: 'Habilidades Blandas y Liderazgo',
         languages: 'Idiomas'
       },
       projects: {
         title: 'Proyectos',
-        viewProject: 'Ver Proyecto'
+        personalTitle: 'Proyectos propios y freelance',
+        personalSubtitle: 'Productos que diseño y construyo de punta a punta',
+        professionalTitle: 'Casos profesionales',
+        professionalSubtitle: 'Algunos sistemas en los que trabajé como parte de un equipo',
+        privateRepo: 'Repositorio privado · demo bajo solicitud'
+      },
+      footer: {
+        rights: 'Todos los derechos reservados.'
       },
       contact: {
         title: 'Contacto',
-        description: '',
+        description: 'Disponible para liderar desafíos de arquitectura, desarrollo full stack e ingeniería cloud.',
         email: 'Correo',
         phone: 'Teléfono',
         location: 'Ubicación'
       },
       certifications: {
-        title: 'Certificaciones'
+        title: 'Certificaciones y Cursos'
       },
       awards: {
         title: 'Reconocimientos'
       }
     },
     en: {
-      brand: 'Portfolio',
+      brand: 'JDGA',
       nav: {
         home: 'Home',
         about: 'About',
@@ -131,16 +170,19 @@ export class TranslationService {
         contact: 'Contact'
       },
       hero: {
+        badge: 'Senior Full Stack Developer',
         greeting: 'Hello, I am',
         name: 'Jose Daniel Garcia Arias',
-        title: 'Electronic Engineer | MSc in Software Engineering Candidate',
-        description: 'Electronic engineer with experience in full-stack software development and cloud architecture. I have participated in the integration of major companies such as Grupo Éxito, Supergiros, and Carvajal Tecnología y Servicios. My technical strengths include Java, Spring Boot, Angular, AWS, and modern architectures such as Hexagonal and Event-Driven.',
+        title: 'Electronic Engineer | MSc in Software Engineering',
+        description: 'I build systems with Java, Spring Boot, Angular, and AWS using Hexagonal and Event-Driven architectures. I currently work at Carvajal Tecnología y Servicios on a document management system for Colombia, Mexico, and Peru.',
         downloadCV: 'Download CV',
         contactMe: 'Contact Me'
       },
       about: {
         title: 'About Me',
-        description: '<p>I am an electronic engineer with experience in full-stack software development and cloud architecture. I have participated in the integration of major companies in the country, such as Grupo Éxito, Supergiros, and Carvajal Tecnología y Servicios. My technical strengths include Java, Spring Boot, Angular, AWS, PL/SQL, and modern architectures such as Hexagonal and Event-Driven.</p><p>As a Master\'s candidate in Software Engineering at Universidad de los Andes, I complement my technical experience with advanced knowledge in agile architecture, cloud-native development, automated testing, and DevOps practices.</p><p>Throughout my career, I have worked translating business requirements into effective technical solutions, applying SOLID and Clean Code principles, optimizing cloud resources, and addressing complex challenges across different software development domains. My multidisciplinary background enables me to adapt to diverse technological contexts and contribute to various areas of software engineering.</p>'
+        subtitle: 'Large-scale software engineering, cloud architecture, and technical leadership',
+        description: '<p>I am an <strong>Electronic Engineer</strong> and hold a <strong>Master\'s degree in Software Engineering from Universidad de los Andes</strong>, with extensive experience in full-stack software development and cloud architecture. I work at Carvajal Tecnología y Servicios and have taken part in large-scale integrations for major Colombian companies such as Grupo Éxito and Supergiros. My technical strengths include Java, Spring Boot, Angular, AWS, PL/SQL, and modern architectures such as Hexagonal and Event-Driven.</p><p>My postgraduate background backs my practical experience with advanced knowledge in agile architecture, cloud-native development, automated testing, and DevOps practices.</p><p>Throughout my career, I have worked translating business requirements into effective technical solutions, applying SOLID and Clean Code principles, optimizing cloud resources, and addressing complex challenges across different software development domains. My multidisciplinary profile enables me to adapt to diverse technological contexts and lead solutions across different areas of software engineering.</p>',
+        pillarsTitle: 'Core Engineering Pillars'
       },
       experience: {
         title: 'Professional Experience',
@@ -150,24 +192,32 @@ export class TranslationService {
         title: 'Education'
       },
       skills: {
-        title: 'Skills',
-        technical: 'Technical Skills',
-        soft: 'Soft Skills',
+        title: 'Technical Stack & Competencies',
+        technical: 'Core Technical Skills',
+        software: 'Cloud, DevOps & Tooling',
+        soft: 'Leadership & Soft Skills',
         languages: 'Languages'
       },
       projects: {
         title: 'Projects',
-        viewProject: 'View Project'
+        personalTitle: 'Own & Freelance Projects',
+        personalSubtitle: 'Products I design and build end to end',
+        professionalTitle: 'Professional Work',
+        professionalSubtitle: 'Systems I worked on as part of a team',
+        privateRepo: 'Private repository · demo on request'
+      },
+      footer: {
+        rights: 'All rights reserved.'
       },
       contact: {
         title: 'Contact',
-        description: '',
+        description: 'Available for software architecture, senior full-stack development, and cloud engineering opportunities.',
         email: 'Email',
         phone: 'Phone',
         location: 'Location'
       },
       certifications: {
-        title: 'Certifications'
+        title: 'Certifications & Courses'
       },
       awards: {
         title: 'Awards'
@@ -181,5 +231,10 @@ export class TranslationService {
 
   setLanguage(lang: 'en' | 'es'): void {
     this.currentLanguage.set(lang);
+    try {
+      window.localStorage.setItem(TranslationService.storageKey, lang);
+    } catch {
+      // Ignore: the choice just won't persist between visits.
+    }
   }
 }

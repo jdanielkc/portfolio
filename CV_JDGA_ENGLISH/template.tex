@@ -33,7 +33,7 @@
 \usepackage[english]{babel}  %% LANG: English version
 
 % Disable automatic hyphenation of words
-\usepackage[none]{hyphenat} %% FLAG: Hyphenation disabled
+\usepackage[none]{hyphenat}
 
 % Font encoding and font configuration
 \ifxetexorluatex
@@ -67,10 +67,11 @@
 %-------------------------------------------------------------------------------
 %% mandatory information
 \cvname{\LARGE\textbf{Jose Daniel Garcia Arias}}
-\cvjobtitle{Electronic Engineer\\[0.2em]MSc in Software Engineering} %% FLAG: Title unified and capitalized.
+\cvjobtitle{Senior Full Stack Developer\\[0.2em]Electronic Engineer\\[0.2em]MSc in Software Engineering}
 \cvprofilepic{pics/profile.jpg}
 \cvbirthday{July 11, 1996}
 \cvphone{+57 317 863 1915}
+\cvaddress{Cali, Colombia}
 % \cvmail{jd.garciaa1@uniandes.edu.co}
 \cvsite{www.josegarcia.com.co}
 \cvmail{jose.garcia960711@gmail.com}
@@ -83,15 +84,15 @@
 %-------------------------------------------------------------------------------
 \addtofrontsidebar{
     \graphicspath{{pics/flags/}}
-    \profilesection{\LARGE Professional Networks}
+    \profilesection{Professional Networks}
         \begin{icontable}{2.5em}{1em}
-            \social{\faLinkedin}{https://www.linkedin.com/in/jgarciaarias/}{LinkedIn (click)}
-            \social{\faGithub}{https://github.com/jdanielkc}{GitHub Link}
+            \social{\faLinkedin}{https://www.linkedin.com/in/jgarciaarias/}{in/jgarciaarias}
+            \social{\faGithub}{https://github.com/jdanielkc}{github.com/jdanielkc}
         \end{icontable}
-    \profilesection{\LARGE Languages}
+    \profilesection{Languages}
         \pointskill{\flag{CO.png}}{Spanish}{5}
         \pointskill{\flag{GB.png}}{English}{3}
-    \profilesection{\LARGE Technical Skills}
+    \profilesection{Technical Skills}
             \pointskill{\faJava}{Java}{5}[5]
             \pointskill{\faGitSquare}{Git and GitHub}{5}[5]
             \pointskill{\faDatabase}{SQL}{5}[5]
@@ -114,9 +115,10 @@
 \addtobacksidebar{
     \profilesection{About Me}
     \aboutme{
-    \textcolor{black!90}{I am an electronic engineer with experience in full-stack software development and cloud architecture. I have participated in the integration of major companies in the country, such as Grupo Éxito, Supergiros, and Carvajal Tecnología y Servicios. My technical strengths include Java, Spring Boot, Angular, AWS, PL/SQL, and modern architectures such as Hexagonal and Event-Driven.\\
-    As a Master's candidate in Software Engineering at Universidad de los Andes, I complement my technical experience with advanced knowledge in agile architecture, cloud-native development, automated testing, and DevOps practices.\\
-    Throughout my career, I have worked translating business requirements into effective technical solutions, applying SOLID and Clean Code principles, optimizing cloud resources, and addressing complex challenges across different software development domains. My multidisciplinary background enables me to adapt to diverse technological contexts and contribute to various areas of software engineering.}}
+    \textcolor{black!90}{I am an Electronic Engineer and hold a Master's degree in Software Engineering from Universidad de los Andes, with extensive experience in full-stack software development and cloud architecture. I work at Carvajal Tecnología y Servicios and have taken part in large-scale integrations for major Colombian companies such as Grupo Éxito and Supergiros. My technical strengths include Java, Spring Boot, Angular, AWS, PL/SQL, and modern architectures such as Hexagonal and Event-Driven.\\
+    My postgraduate background backs my practical experience with advanced knowledge in agile architecture, cloud-native development, automated testing, and DevOps practices.\\
+    Throughout my career, I have worked translating business requirements into effective technical solutions, applying SOLID and Clean Code principles, optimizing cloud resources, and addressing complex challenges across different software development domains. My multidisciplinary profile enables me to adapt to diverse technological contexts and lead solutions across different areas of software engineering.}}
+
     
     \profilesection{Soft Skills}
         \skill{\faUsers}{Teamwork}{}
@@ -127,28 +129,45 @@
         \skill{\faComments}{Communication}{}
         \skill{\faPuzzlePiece}{Problem Solving}{}
         \skill{\faUserTie}{Leadership}{}
+
         
-    \profilesection{Software}
+        \profilesection{Software}
     \begin{sidebarminipage}
+            \chartlabel{Kubernetes (EKS)}
+            \chartlabel{AWS ECS / S3}
+            \chartlabel{AWS Cognito}
             \chartlabel{Azure}
-            \chartlabel{Microsoft Office}
-            \chartlabel{Power BI}
-            \chartlabel{Postman}
-            \chartlabel{Postgres DB}
-            \chartlabel{Libre Office}
-            \chartlabel{LaTeX}
-            \chartlabel{Keras}
+            \chartlabel{CI/CD}
+            \chartlabel{TypeScript}
+            \chartlabel{PostgreSQL}
             \chartlabel{Oracle DB}
-            \chartlabel{JMeter} %% FLAG: Consistency with "JMeter".
-            \chartlabel{SO Linux}
-            \chartlabel{SO Windows}
-            \chartlabel{Pandas}
+            \chartlabel{JUnit / Mockito}
+            \chartlabel{Postman}
+            \chartlabel{Power BI}
+            \chartlabel{Apache Spark}
+            \chartlabel{Linux}
     \end{sidebarminipage}
 }
 
 %-------------------------------------------------------------------------------
 %                         TABLE ENTRIES RIGHT COLUMN
 %-------------------------------------------------------------------------------
+\newcommand{\cvitemfluid}[4]{
+    \par\noindent
+    \begin{minipage}[t]{0.25\textwidth}
+        \raggedright #1
+    \end{minipage}%
+    \begin{minipage}[t]{0.74\textwidth}
+        \textbf{#2} \hfill {\footnotesize #3}
+    \end{minipage}\\[0.2em]
+    \begingroup
+    \leftskip=0.25\textwidth
+    \noindent #4
+    \par
+    \endgroup
+    \vspace{1em}
+}
+
 \begin{document}
 
 \makefrontsidebar
@@ -164,20 +183,20 @@
         • Application of SOLID principles, Clean Code, and design patterns in an agile environment, ensuring code maintainability and scalability.\\[0.2em]
         \textbf{Skills}: Java, Spring Boot, Angular, AWS (S3, EKS, ECS, IAM, Cognito), Hexagonal Architecture, Event-Driven Architecture, TypeScript, Scrum, HTML, CSS.
     }
-    \cvitem{10/2022 -- 05/2025\centering}{Development Engineer}{Red Empresarial de Servicios S.A}{
+    \cvitem{10/2022--05/2025\centering}{Development Engineer}{Red Empresarial de Servicios S.A.}{
         FullStack Developer in large-scale integrations (Supergiros, Grupo Éxito) using Scrum. Technical leadership applying SOLID principles and architecture patterns (MVC, SAGA) in web and mobile solutions.\\[0.2em]
         • Secure development in Java LTS (8, 11, 17) implementing TLS/SSL and mTLS protocols.\\[0.2em]
         • Design and optimization of databases (Postgres, Oracle) ensuring integrity and efficiency.\\[0.2em]
         • System integration via REST APIs and mobile migration to modern stack (Angular, Spring, Flutter).\\[0.2em]
         • Execution of load and unit testing (JMeter, JUnit, Mockito, Spring Test).\\[0.2em]
-        \textbf{Skills}: Java Spring Boot, Angular, PL/SQL, Oracle/Postgres, Docker, Azure, Microservices, JMeter, Git/SVN/Flow, CI/CD, HTML/CSS/JS.
+        \textbf{Skills}: Java, Spring Boot, Angular, PL/SQL, Oracle/Postgres, Docker, Azure, Microservices, JMeter, Git/SVN/Flow, CI/CD, HTML/CSS/JS.
     }
     \cvitem{01/2022--07/2022\centering}{Analytic and Big Data Intern}{Accenture Colombia}{
-        I served as a Junior Data Engineer, collaborating in the development, implementation, and delivery of a machine learning model to predict purchase abandonment. Among my responsibilities, I focused on optimizing AI models through hyperparameter tuning and creating dashboards in PowerBI to visualize the results.\\[0.2em]
+        I served as a Junior Data Engineer, collaborating in the development, implementation, and delivery of a machine learning model to predict purchase abandonment. Among my responsibilities, I focused on optimizing AI models through hyperparameter tuning and creating dashboards in Power BI to visualize the results.\\[0.2em]
         • Optimized models using techniques such as Support Vector Machine, Random Forest, and Deep Networks.\\[0.2em]
         • Developed optimized databases for training Machine Learning models.\\[0.2em]
-        • Designed PowerBI dashboards for monitoring results.\\[0.2em]
-        \textbf{Skills}: Python, NumPy, Artificial Intelligence, Apache Spark, Pandas, PowerBI, Machine Learning, Keras, TensorFlow.
+        • Designed Power BI dashboards for monitoring results.\\[0.2em]
+        \textbf{Skills}: Python, NumPy, Artificial Intelligence, Apache Spark, Pandas, Power BI, Machine Learning, Keras, TensorFlow.
     }
 \end{cvtable}
 
@@ -186,13 +205,11 @@
 \makebacksidebar
 
 % --- BLOCK 2: PAGE 2 (Previous Jobs) ---
-\begin{cvtable}[3]
-
+\begin{cvtable}[2]
     \cvitem{01/2019--12/2021\centering}{IT Technician and Support}{Diverjuegos SAS}{
         Responsible for the design, development, and implementation of software requirements, as well as providing technical support for the technological infrastructure and overseeing information security systems.\\[0.2em]
         • Designed the microservices architecture for an administrative wiki portal, aimed at documenting new employee training.\\[0.2em]
         • Developed both back-end and front-end using Spring Data, Spring Boot, Spring Gateway, and Angular.\\[0.2em]
-        % • Created a Single Page Application (SPA) using Bootstrap, HTML, CSS, and Angular.\\[0.2em]
         • Provided maintenance and technical support across the company’s various locations.\\[0.2em]
         \textbf{Skills}: Spring Framework, Technical Support, Java, Docker, Spring Boot, Angular, Information Security, IP Systems Design, HTML, CSS, JavaScript.
     }
@@ -200,47 +217,33 @@
 
 \cvsection{Professional Studies}
 \cvsubsection{\textbf{Academic Studies}}
-\begin{cvtable}[1.5]
-    \cvitem{2024--Present\centering}{MSc in Software Engineering}{University of the Andes}{Master's candidate in Software Engineering. Profile focused on agile architecture, software design, and project management. Advanced academic experience in the full development lifecycle, covering mobile and web applications through to cloud-native implementations with continuous integration and deployment.}
-    \cvitem{2015 -- 2023\centering}{Electronic Engineering}{University of the Valley}{\textit{Thesis}: Classification of cardiovascular pathologies using deep learning techniques based on ECG signals.}
-    \cvitem{2021 -- 2021\centering}{Diploma in Web Programming}{Technological University of Pereira}{The diploma covered 4 areas: Python, JAVA, software development, and web applications over 800 hours.}
+\begin{cvtable}[1.2]
+    \cvitem{2024--2026\centering}{MSc in Software Engineering}{Universidad de los Andes}{Advanced training in the design, construction, and evolution of complex large-scale software systems. Specialization in agile and cloud-native architectures oriented toward critical quality attributes (scalability, availability, security, and resilience), automated testing engineering, DevOps practices (CI/CD), and technical team leadership under agile methodologies.}
+    \cvitem{2015--2023\centering}{Electronic Engineering}{Universidad del Valle}{\textit{Thesis}: Classification of cardiovascular pathologies using deep learning techniques based on ECG signals.\\ \textbf{Best Academic Average Distinction} of the semester (2020 and 2022).}
+    \cvitem{2021--2021\centering}{Diploma in Web Programming}{U. Tecnológica de Pereira}{The diploma covered 4 areas: Python, Java, software development, and web applications over 800 hours.}
 \end{cvtable}
 
 \cvsubsection{\textbf{Certifications}}
-\begin{cvtable}[1.5]
+\begin{cvtable}[1.0]
     \cvitem{2023\centering}{Scrum Foundation Professional Certificate (SFPC)}{CertiProf}{}
     \cvitem{2023\centering}{Scrum Fundamentals Certified (SFC)}{Scrumstudy}{}
 \end{cvtable}
 
 \cvsubsection{\textbf{Courses}}
-\begin{cvtable}[1.5]
-    \cvitem{2024\centering}{Version Control with Git and GitHub}{University of the Andes}{}
-    \cvitem{2024\centering}{Introduction to UML}{University of the Andes}{}
-    % \cvitem{2024\centering}{Python Programming}{University of the Andes}{}
+\begin{cvtable}[1.0]
+    \cvitem{2024\centering}{Version Control with Git and GitHub}{Universidad de los Andes}{}
+    \cvitem{2024\centering}{Introduction to UML}{Universidad de los Andes}{}
     \cvitem{2023\centering}{PL/SQL From Scratch}{Udemy}{}
-    \cvitem{2022\centering}{Python for everybody (specialization)}{University of Michigan}{}
-    % \cvitem{2022\centering}{Professional Git and GitHub Course}{Platzi}{}
-    % \cvitem{2022\centering}{Using Python to Access Web Data}{University of Michigan}{}
-    % \cvitem{2021\centering}{Python Data Structures}{University of Michigan}{}
-    % \cvitem{2021\centering}{Getting Started with Python}{University of Michigan}{}
+    \cvitem{2022\centering}{Python for Everybody (Specialization)}{University of Michigan}{}
 \end{cvtable}
 
 \cvsection{Projects}
-\begin{cvtable}
-    \cvitem{\centering2022 -- 2023}{Electronic Engineering}{University of the Valley}{Design and implementation of a classification system for cardiovascular pathologies using recurrent and convolutional neural networks based on ECG signals.}
+\begin{cvtable}[1.0]
+    \cvitem{2026 -- Present\centering}{AG Project Manager (in production)}{Freelance}{Project management system for a real estate company: Kanban, property inventory, calendar, and productivity. Spring Modulith, outbox to RabbitMQ, on-premise deployment. \textbf{Stack}: Java 25, Spring Boot 4, PostgreSQL, MongoDB, Angular 21, Docker.}
+    \cvitem{2026 -- Present\centering}{LegalBridge (in development)}{Own project}{Vehicle paperwork platform: operator-assisted RUNT data capture, consent under Law 1581, and PDF contracts. Hexagonal microservices. \textbf{Stack}: Java 25, Spring Boot 4, RabbitMQ, Keycloak, Angular 21.}
+    \cvitem{2022--2023\centering}{ECG Cardiovascular Pathology Classification}{Universidad del Valle}{Undergraduate thesis: recurrent and convolutional neural networks to classify cardiovascular pathologies from ECG signals.}
 \end{cvtable}
 
-\cvsection{Awards}
-\begin{cvtable}
-    \cvitem{08/2020-12/2020\centering}{Award for Best Academic Average of the Semester.}{University of the Valley}{}\\
-    \cvitem{10/2021-04/2022\centering}{Award for Best Academic Average of the Semester.}{University of the Valley}{}
-\end{cvtable}
 
-% \cvsection{Personal References}
-% \begin{cvtable}
-%     \cvitem{}{Diego Fernando Teuta}{Cenicaña}{Position: Electronic Engineer\\ Contact: +57 315 7404753}\\
-%     \cvitem{}{Angela Andrade}{Kalettre}{Position: Software Developer\\ Contact: +57 318 6875106}\\
-% \end{cvtable}
 
-% \cvsignature
 \end{document}

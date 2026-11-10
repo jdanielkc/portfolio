@@ -1,8 +1,8 @@
-﻿<!-- Navbar -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Main navigation">
   <div class="container">
-    <a class="navbar-brand" (click)="scrollToSection('home')">
-      <i class="bi bi-code-slash"></i> {{ translations().brand }}
+    <a class="navbar-brand" href="#home" (click)="scrollToSection('home', $event)">
+      <span class="brand-monogram">JG</span> {{ translations().brand }}
     </a>
 
     <!-- Language Selector -->
@@ -15,14 +15,14 @@
         </button>
         <ul class="dropdown-menu dropdown-menu-end" [class.show]="isLanguageDropdownOpen()">
           <li>
-            <a class="dropdown-item" (click)="changeLanguage('es')">
-              <i class="bi bi-flag"></i> Español
-            </a>
+            <button type="button" class="dropdown-item" [class.active]="currentLanguage() === 'es'" (click)="changeLanguage('es')">
+              Español @if (currentLanguage() === 'es') { <i class="bi bi-check2 ms-1"></i> }
+            </button>
           </li>
           <li>
-            <a class="dropdown-item" (click)="changeLanguage('en')">
-              <i class="bi bi-flag"></i> English
-            </a>
+            <button type="button" class="dropdown-item" [class.active]="currentLanguage() === 'en'" (click)="changeLanguage('en')">
+              English @if (currentLanguage() === 'en') { <i class="bi bi-check2 ms-1"></i> }
+            </button>
           </li>
         </ul>
       </div>
@@ -37,42 +37,42 @@
     <div class="collapse navbar-collapse" [class.show]="isMenuOpen()">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('home')" [class.active]="activeSection() === 'home'">
+          <a class="nav-link" href="#home" (click)="scrollToSection('home', $event)" [class.active]="activeSection() === 'home'">
             {{ translations().nav.home }}
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('about')" [class.active]="activeSection() === 'about'">
+          <a class="nav-link" href="#about" (click)="scrollToSection('about', $event)" [class.active]="activeSection() === 'about'">
             {{ translations().nav.about }}
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('experience')" [class.active]="activeSection() === 'experience'">
+          <a class="nav-link" href="#experience" (click)="scrollToSection('experience', $event)" [class.active]="activeSection() === 'experience'">
             {{ translations().nav.experience }}
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('education')" [class.active]="activeSection() === 'education'">
+          <a class="nav-link" href="#education" (click)="scrollToSection('education', $event)" [class.active]="activeSection() === 'education'">
             {{ translations().nav.education }}
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('skills')" [class.active]="activeSection() === 'skills'">
+          <a class="nav-link" href="#skills" (click)="scrollToSection('skills', $event)" [class.active]="activeSection() === 'skills'">
             {{ translations().nav.skills }}
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('projects')" [class.active]="activeSection() === 'projects'">
+          <a class="nav-link" href="#projects" (click)="scrollToSection('projects', $event)" [class.active]="activeSection() === 'projects'">
             {{ translations().nav.projects }}
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('certifications')" [class.active]="activeSection() === 'certifications'">
+          <a class="nav-link" href="#certifications" (click)="scrollToSection('certifications', $event)" [class.active]="activeSection() === 'certifications'">
             {{ translations().nav.certifications }}
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('contact')" [class.active]="activeSection() === 'contact'">
+          <a class="nav-link" href="#contact" (click)="scrollToSection('contact', $event)" [class.active]="activeSection() === 'contact'">
             {{ translations().nav.contact }}
           </a>
         </li>
@@ -85,8 +85,11 @@
 <section id="home" class="hero-section">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-lg-6">
+      <div class="col-lg-7">
         <div class="hero-content">
+          <div class="hero-badge">
+            <i class="bi bi-patch-check-fill"></i> {{ translations().hero.badge }}
+          </div>
           <p class="greeting">{{ translations().hero.greeting }}</p>
           <h1 class="hero-title">{{ translations().hero.name }}</h1>
           <h2 class="hero-subtitle">{{ translations().hero.title }}</h2>
@@ -100,25 +103,43 @@
             </button>
           </div>
           <div class="social-links">
-            <a [href]="portfolioData().contact.linkedin" target="_blank" class="social-link">
+            <a [href]="portfolioData().contact.linkedin" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
               <i class="bi bi-linkedin"></i>
             </a>
-            <a [href]="portfolioData().contact.github" target="_blank" class="social-link">
+            <a [href]="portfolioData().contact.github" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
               <i class="bi bi-github"></i>
             </a>
-            <a [href]="'mailto:' + portfolioData().contact.email" class="social-link">
+            <a [href]="'mailto:' + portfolioData().contact.email" class="social-link" aria-label="Email">
               <i class="bi bi-envelope-fill"></i>
             </a>
           </div>
         </div>
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-5">
         <div class="hero-image">
           <div class="profile-card">
             <img src="assets/images/profile/FotoPerfil.jpg" alt="Jose Daniel Garcia Arias" class="profile-photo">
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Senior Executive Highlights Strip -->
+    <div class="row hero-highlights mt-5 pt-2">
+      @for (item of portfolioData().highlights; track $index) {
+      <div class="col-6 col-lg-3 mb-3">
+        <div class="highlight-card">
+          <div class="highlight-icon">
+            <i class="bi {{ item.icon }}"></i>
+          </div>
+          <div class="highlight-info">
+            <div class="highlight-value">{{ item.value }}</div>
+            <div class="highlight-label">{{ item.label }}</div>
+            <div class="highlight-detail">{{ item.detail }}</div>
+          </div>
+        </div>
+      </div>
+      }
     </div>
   </div>
 </section>
@@ -127,14 +148,42 @@
 <section id="about" class="section bg-light">
   <div class="container">
     <h2 class="section-title">{{ translations().about.title }}</h2>
-    <div class="row">
-      <div class="col-lg-8 mx-auto">
-        <div class="card animate-on-scroll">
-          <div class="card-body">
-            <div class="lead" [innerHTML]="translations().about.description"></div>
+    <p class="section-subtitle text-muted">{{ translations().about.subtitle }}</p>
+    <div class="row mb-5">
+      <div class="col-lg-10 mx-auto">
+        <div class="card about-summary-card animate-on-scroll">
+          <div class="card-body p-4 p-lg-5">
+            <div class="lead about-text" [innerHTML]="translations().about.description"></div>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Senior Engineering Pillars -->
+    <h3 class="subsection-title animate-on-scroll mb-4">{{ translations().about.pillarsTitle }}</h3>
+    <div class="row">
+      @for (pillar of portfolioData().pillars; track $index) {
+      <div class="col-lg-6 mb-4">
+        <div class="card pillar-card h-100 animate-on-scroll" [style.transition-delay]="$index * 80 + 'ms'">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-start gap-3">
+              <div class="pillar-icon">
+                <i class="bi {{ pillar.icon }}"></i>
+              </div>
+              <div class="flex-grow-1">
+                <h4 class="pillar-title">{{ pillar.title }}</h4>
+                <p class="pillar-desc">{{ pillar.description }}</p>
+                <div class="pillar-tags">
+                  @for (tag of pillar.tags; track $index) {
+                  <span class="pillar-tag">{{ tag }}</span>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
     </div>
   </div>
 </section>
@@ -184,10 +233,10 @@
 <section id="education" class="section bg-light">
   <div class="container">
     <h2 class="section-title">{{ translations().education.title }}</h2>
-    <div class="row">
+    <div class="row mt-4">
       @for (edu of portfolioData().education; track $index) {
-      <div class="col-lg-6 mb-4">
-        <div class="card education-card animate-on-scroll" [style.transition-delay]="$index * 100 + 'ms'">
+      <div [class]="$index === 0 ? 'col-lg-12 mb-4' : 'col-lg-6 mb-4'">
+        <div class="card education-card h-100 animate-on-scroll" [class.featured-education]="$index === 0" [style.transition-delay]="$index * 100 + 'ms'">
           <div class="card-body">
             <div class="education-header">
               @if (edu.logo) {
@@ -196,7 +245,12 @@
               </div>
               }
               <div class="education-title-section">
-                <h3 class="card-title">{{ edu.degree }}</h3>
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+                  <h3 class="card-title mb-1">{{ edu.degree }}</h3>
+                  @if ($index === 0) {
+                  <span class="badge bg-primary rounded-pill">MSc</span>
+                  }
+                </div>
                 <h5 class="institution-name">{{ edu.institution }}</h5>
                 <p class="period">
                   <i class="bi bi-calendar-event"></i> {{ edu.period }}
@@ -204,7 +258,7 @@
               </div>
             </div>
             @if (edu.description) {
-            <p class="description">{{ edu.description }}</p>
+            <p class="description mb-0">{{ edu.description }}</p>
             }
           </div>
         </div>
@@ -225,7 +279,8 @@
                 <div>
                   <h5 class="award-title">{{ award.title }}</h5>
                   <p class="award-issuer">{{ award.issuer }}</p>
-                  <small class="award-date text-muted">{{ award.date }}</small>
+                  <p class="text-muted small mb-1">{{ award.description }}</p>
+                  <small class="award-date text-muted"><i class="bi bi-calendar3"></i> {{ award.date }}</small>
                 </div>
               </div>
             </div>
@@ -241,56 +296,87 @@
 <!-- Skills Section -->
 <section id="skills" class="section">
   <div class="container">
-    <h2 class="section-title text-white">{{ translations().skills.title }}</h2>
+    <h2 class="section-title text-white mb-5">{{ translations().skills.title }}</h2>
     <div class="row">
+      <!-- Left Column: Core Technical Skills -->
       <div class="col-lg-6 mb-4">
         <div class="card skills-card animate-on-scroll">
-          <div class="card-body">
-            <h3 class="card-title">{{ translations().skills.technical }}</h3>
+          <div class="card-body p-4">
+            <h3 class="card-title mb-4"><i class="bi bi-cpu text-primary me-2"></i>{{ translations().skills.technical }}</h3>
             @for (skill of portfolioData().skills.technical; track $index) {
             <div class="skill-item">
               <div class="skill-header">
                 <span class="skill-name">{{ skill.name }}</span>
-                <span class="skill-percentage">{{ skill.level }}%</span>
-              </div>
-              <div class="progress">
-                <div class="progress-bar" [style.width.%]="skill.level"></div>
+                <span class="skill-level">
+                  <span class="skill-tier-badge">{{ skill.tier }}</span>
+                  <span class="level-dots" role="img" [attr.aria-label]="skill.level + '/5'">
+                    @for (dot of levelDots; track dot) {
+                    <span class="level-dot" [class.filled]="dot <= skill.level"></span>
+                    }
+                  </span>
+                </span>
               </div>
             </div>
             }
           </div>
         </div>
       </div>
-      <div class="col-lg-6 mb-4">
-        <div class="card skills-card animate-on-scroll" style="transition-delay: 100ms;">
-          <div class="card-body">
-            <h3 class="card-title">{{ translations().skills.soft }}</h3>
-            <div class="soft-skills">
-              @for (skill of portfolioData().skills.soft; track $index) {
-              <div class="soft-skill-item">
-                <i class="bi bi-check-circle-fill"></i>
-                <span>{{ skill }}</span>
+
+      <!-- Right Column: Software/Cloud Stack + Soft Skills + Languages -->
+      <div class="col-lg-6">
+        <div class="row">
+          <div class="col-12 mb-4">
+            <div class="card skills-card animate-on-scroll" style="transition-delay: 80ms;">
+              <div class="card-body p-4">
+                <h3 class="card-title mb-3"><i class="bi bi-cloud-check text-primary me-2"></i>{{ translations().skills.software }}</h3>
+                <div class="software-tags">
+                  @for (tool of portfolioData().software; track $index) {
+                  <span class="software-chip">
+                    <i class="bi bi-check2-circle"></i> {{ tool }}
+                  </span>
+                  }
+                </div>
               </div>
-              }
             </div>
           </div>
-        </div>
-      </div>
-      <div class="col-lg-6 mx-auto mb-4">
-        <div class="card skills-card animate-on-scroll" style="transition-delay: 200ms;">
-          <div class="card-body">
-            <h3 class="card-title">{{ translations().skills.languages }}</h3>
-            @for (lang of portfolioData().languages; track $index) {
-            <div class="skill-item">
-              <div class="skill-header">
-                <span class="skill-name">{{ lang.name }}</span>
-                <span class="skill-percentage">{{ lang.level }}%</span>
-              </div>
-              <div class="progress">
-                <div class="progress-bar" [style.width.%]="lang.level"></div>
+
+          <div class="col-12 mb-4">
+            <div class="card skills-card animate-on-scroll" style="transition-delay: 140ms;">
+              <div class="card-body p-4">
+                <h3 class="card-title mb-3"><i class="bi bi-people text-primary me-2"></i>{{ translations().skills.soft }}</h3>
+                <div class="soft-skills-grid">
+                  @for (skill of portfolioData().skills.soft; track $index) {
+                  <div class="soft-skill-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>{{ skill }}</span>
+                  </div>
+                  }
+                </div>
               </div>
             </div>
-            }
+          </div>
+
+          <div class="col-12 mb-4">
+            <div class="card skills-card animate-on-scroll" style="transition-delay: 200ms;">
+              <div class="card-body p-4">
+                <h3 class="card-title mb-3"><i class="bi bi-translate text-primary me-2"></i>{{ translations().skills.languages }}</h3>
+                @for (lang of portfolioData().languages; track $index) {
+                <div class="skill-item mb-3">
+                  <div class="skill-header">
+                    <span class="skill-name">{{ lang.name }}</span>
+                    <span class="skill-level">
+                      <span class="skill-tier-badge">{{ lang.tier }}</span>
+                      <span class="level-dots" role="img" [attr.aria-label]="lang.level + '/5'">
+                        @for (dot of levelDots; track dot) {
+                        <span class="level-dot" [class.filled]="dot <= lang.level"></span>
+                        }
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                }
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -301,31 +387,75 @@
 <!-- Projects Section -->
 <section id="projects" class="section bg-light">
   <div class="container">
-    <h2 class="section-title">{{ translations().projects.title }}</h2>
+    <h2 class="section-title mb-5">{{ translations().projects.title }}</h2>
+
+    <!-- Own & freelance projects -->
+    <h3 class="subsection-title animate-on-scroll mb-1">{{ translations().projects.personalTitle }}</h3>
+    <p class="text-muted mb-4">{{ translations().projects.personalSubtitle }}</p>
     <div class="row">
-      @for (project of portfolioData().projects; track $index) {
-      <div class="col-lg-4 mb-4">
+      @for (project of personalProjects(); track project.title) {
+      <div class="col-lg-6 mb-4">
         <div class="card project-card animate-on-scroll h-100" [style.transition-delay]="$index * 100 + 'ms'">
           <div class="project-image">
             @if (project.image) {
               <img [src]="project.image" [alt]="project.title" />
             } @else {
-              <i class="bi bi-code-square"></i>
+              <i class="bi {{ project.icon }}"></i>
+            }
+            @if (project.status) {
+            <span class="project-status status-{{ project.status }}">{{ project.statusLabel }}</span>
             }
           </div>
-          <div class="card-body">
-            <h3 class="card-title">{{ project.title }}</h3>
+          <div class="card-body d-flex flex-column">
+            <p class="project-context">{{ project.context }}</p>
+            <h4 class="card-title h5 fw-bold">{{ project.title }}</h4>
             <p class="card-text">{{ project.description }}</p>
-            <div class="technologies mb-3">
+            @if (project.highlights) {
+            <ul class="project-highlights">
+              @for (item of project.highlights; track $index) {
+              <li>{{ item }}</li>
+              }
+            </ul>
+            }
+            <div class="technologies mt-auto mb-3">
               @for (tech of project.technologies; track $index) {
               <span class="badge">{{ tech }}</span>
               }
             </div>
             <div class="project-links">
               @if (project.github) {
-              <a [href]="project.github" target="_blank" class="btn btn-sm btn-outline-primary">
+              <a [href]="project.github" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
                 <i class="bi bi-github"></i> GitHub
               </a>
+              } @else if (project.privateRepo) {
+              <span class="private-repo"><i class="bi bi-lock-fill"></i> {{ translations().projects.privateRepo }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+
+    <!-- Professional work -->
+    <h3 class="subsection-title animate-on-scroll mt-4 mb-1">{{ translations().projects.professionalTitle }}</h3>
+    <p class="text-muted mb-4">{{ translations().projects.professionalSubtitle }}</p>
+    <div class="row">
+      @for (project of professionalProjects(); track project.title) {
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card project-card professional-card animate-on-scroll h-100" [style.transition-delay]="$index * 100 + 'ms'">
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="professional-icon"><i class="bi {{ project.icon }}"></i></div>
+              <div>
+                <h4 class="card-title h6 fw-bold mb-0">{{ project.title }}</h4>
+                <p class="project-context mb-0">{{ project.context }}</p>
+              </div>
+            </div>
+            <p class="card-text flex-grow-1">{{ project.description }}</p>
+            <div class="technologies">
+              @for (tech of project.technologies; track $index) {
+              <span class="badge">{{ tech }}</span>
               }
             </div>
           </div>
@@ -337,14 +467,14 @@
 </section>
 
 <!-- Certifications Section -->
-<section id="certifications" class="section bg-light">
+<section id="certifications" class="section bg-light pt-2">
   <div class="container">
-    <h2 class="section-title animate-on-scroll">{{ translations().certifications.title }}</h2>
+    <h2 class="section-title animate-on-scroll mb-5">{{ translations().certifications.title }}</h2>
     <div class="row justify-content-center">
       @for (cert of portfolioData().certifications; track $index) {
-      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="col-lg-4 col-md-6 mb-4">
         <div class="card cert-card animate-on-scroll" [style.transition-delay]="$index * 80 + 'ms'">
-          <div class="card-body text-center">
+          <div class="card-body text-center p-4">
             <i class="bi {{ cert.icon }} cert-icon"></i>
             <h6 class="cert-name">{{ cert.name }}</h6>
             <p class="cert-issuer">{{ cert.issuer }}</p>
@@ -363,10 +493,10 @@
     <h2 class="section-title text-white">{{ translations().contact.title }}</h2>
     <p class="section-subtitle text-white">{{ translations().contact.description }}</p>
     <div class="row justify-content-center">
-      <div class="col-lg-8">
+      <div class="col-lg-9">
         <div class="row">
           <div class="col-md-4 mb-4">
-            <div class="contact-card card text-center animate-on-scroll">
+            <div class="contact-card card h-100 text-center animate-on-scroll">
               <div class="card-body">
                 <div class="contact-icon">
                   <i class="bi bi-envelope-fill"></i>
@@ -379,7 +509,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="contact-card card text-center animate-on-scroll" style="transition-delay: 100ms;">
+            <div class="contact-card card h-100 text-center animate-on-scroll" style="transition-delay: 100ms;">
               <div class="card-body">
                 <div class="contact-icon">
                   <i class="bi bi-telephone-fill"></i>
@@ -392,7 +522,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="contact-card card text-center animate-on-scroll" style="transition-delay: 200ms;">
+            <div class="contact-card card h-100 text-center animate-on-scroll" style="transition-delay: 200ms;">
               <div class="card-body">
                 <div class="contact-icon">
                   <i class="bi bi-geo-alt-fill"></i>
@@ -411,12 +541,12 @@
 <!-- Footer -->
 <footer class="footer">
   <div class="container text-center">
-    <p>&copy; {{ currentYear }} {{ translations().hero.name }}. All rights reserved.</p>
+    <p>&copy; {{ currentYear }} {{ translations().hero.name }}. {{ translations().footer.rights }}</p>
     <div class="footer-links">
-      <a [href]="portfolioData().contact.linkedin" target="_blank">
+      <a [href]="portfolioData().contact.linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
         <i class="bi bi-linkedin"></i>
       </a>
-      <a [href]="portfolioData().contact.github" target="_blank">
+      <a [href]="portfolioData().contact.github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
         <i class="bi bi-github"></i>
       </a>
     </div>

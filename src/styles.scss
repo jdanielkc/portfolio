@@ -8,11 +8,12 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(-45deg, #1e3a8a, #334155, #1e40af, #475569);
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(-45deg, #0f172a, #1e3a8a, #1e293b, #1d4ed8);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
   min-height: 100vh;
+  color: #1e293b;
 }
 
 @keyframes gradientShift {
@@ -32,12 +33,12 @@ body {
 :root {
   --primary-color: #2563eb;
   --secondary-color: #475569;
-  --accent-color: #0ea5e9;
-  --text-dark: #1e293b;
+  --accent-color: #38bdf8;
+  --text-dark: #0f172a;
   --text-light: #ffffff;
   --card-bg: #ffffff;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  --glow-color: rgba(37, 99, 235, 0.4);
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  --glow-color: rgba(37, 99, 235, 0.35);
 }
 
 html {

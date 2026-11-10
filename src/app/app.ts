@@ -18,6 +18,10 @@ export class App implements OnInit, AfterViewInit {
   translations = computed(() => this.translationService.getTranslations());
   portfolioData = computed(() => this.portfolioService.getData(this.currentLanguage()));
 
+  personalProjects = computed(() => this.portfolioData().projects.filter(p => p.category === 'personal'));
+  professionalProjects = computed(() => this.portfolioData().projects.filter(p => p.category === 'professional'));
+  readonly levelDots = [1, 2, 3, 4, 5];
+
   isMenuOpen = signal(false);
   isLanguageDropdownOpen = signal(false);
   activeSection = signal('home');
@@ -27,6 +31,7 @@ export class App implements OnInit, AfterViewInit {
   private intersectionObserver?: IntersectionObserver;
 
   ngOnInit(): void {
+    this.doc.documentElement.lang = this.currentLanguage();
     this.updateActiveSection();
   }
 
@@ -93,7 +98,8 @@ export class App implements OnInit, AfterViewInit {
     this.isLanguageDropdownOpen.update(value => !value);
   }
 
-  scrollToSection(sectionId: string): void {
+  scrollToSection(sectionId: string, event?: Event): void {
+    event?.preventDefault();
     const element = this.doc.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -104,8 +110,8 @@ export class App implements OnInit, AfterViewInit {
 
   downloadCV(): void {
     const cvUrl = this.currentLanguage() === 'es'
-      ? 'https://drive.google.com/file/d/1k3cqvcsVNKJ7SZRRnjUJAMzixq-g9-DA/view?usp=sharing'
-      : 'https://drive.google.com/file/d/120eapGxC6EBrFAQNcFlYXm9tRVrue1sS/view?usp=sharing';
+      ? 'https://drive.google.com/file/d/1cnBhnl5xofVk0pXUMB5m7EFYxIvBeFPy/view?usp=sharing'
+      : 'https://drive.google.com/file/d/1PUhi_zx-gfH-wVxC-t42DlGztq0Dox49/view?usp=sharing';
     window.open(cvUrl, '_blank', 'noopener,noreferrer');
   }
 }
