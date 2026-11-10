@@ -108,7 +108,7 @@ export class TranslationService {
         greeting: 'Hola, soy',
         name: 'Jose Daniel Garcia Arias',
         title: 'Ingeniero Electrónico | MSc en Ingeniería de Software',
-        description: 'Construyo sistemas con Java, Spring Boot, Angular y AWS bajo arquitecturas Hexagonal y Orientada a Eventos. Hoy trabajo en Carvajal Tecnología y Servicios en un sistema de gestión documental para Colombia, México y Perú.',
+        description: 'Diseño y construyo sistemas de software de punta a punta: arquitecturas distribuidas y orientadas a eventos, soluciones cloud e integraciones de gran escala, eligiendo la tecnología que pide cada problema. Hoy lo hago en Carvajal, en una plataforma para Colombia, México y Perú, y como freelance mantengo en producción un sistema de gestión para una empresa inmobiliaria.',
         downloadCV: 'Descargar CV',
         contactMe: 'Contáctame'
       },
@@ -174,7 +174,7 @@ export class TranslationService {
         greeting: 'Hello, I am',
         name: 'Jose Daniel Garcia Arias',
         title: 'Electronic Engineer | MSc in Software Engineering',
-        description: 'I build systems with Java, Spring Boot, Angular, and AWS using Hexagonal and Event-Driven architectures. I currently work at Carvajal Tecnología y Servicios on a document management system for Colombia, Mexico, and Peru.',
+        description: 'I design and build software systems end to end: distributed and event-driven architectures, cloud solutions, and large-scale integrations, choosing the technology each problem calls for. I currently do this at Carvajal, on a platform serving Colombia, Mexico, and Peru, and as a freelancer I run a production management system for a real estate company.',
         downloadCV: 'Download CV',
         contactMe: 'Contact Me'
       },
