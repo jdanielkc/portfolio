@@ -82,7 +82,7 @@ export class PortfolioService {
           icon: 'bi-mortarboard-fill'
         },
         {
-          value: '3 Países',
+          value: '+3 Países',
           label: 'Impacto Regional',
           detail: 'Sistemas en Colombia, México y Perú',
           icon: 'bi-globe-americas'
@@ -405,7 +405,7 @@ export class PortfolioService {
           icon: 'bi-mortarboard-fill'
         },
         {
-          value: '3 Countries',
+          value: '3+ Countries',
           label: 'Regional Footprint',
           detail: 'Systems across Colombia, Mexico & Peru',
           icon: 'bi-globe-americas'
