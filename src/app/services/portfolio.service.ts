@@ -84,7 +84,7 @@ export class PortfolioService {
         {
           value: '+3 Países',
           label: 'Impacto Regional',
-          detail: 'Sistemas en Colombia, México y Perú',
+          detail: 'Sistemas en países como Colombia, México y Perú',
           icon: 'bi-globe-americas'
         },
         {
@@ -407,7 +407,7 @@ export class PortfolioService {
         {
           value: '3+ Countries',
           label: 'Regional Footprint',
-          detail: 'Systems across Colombia, Mexico & Peru',
+          detail: 'Systems in countries such as Colombia, Mexico & Peru',
           icon: 'bi-globe-americas'
         },
         {
